@@ -7,5 +7,5 @@ Controls
 * Max - maxes all dials
 * rand() - randomizes everything but the mix/levels
 
-![Screenshot of touchOSC](ChromaConsole.jpg?raw=true "Chroma Console TouchOSC")
+![Screenshot of touchOSC](ChromaConsole.png?raw=true "Chroma Console TouchOSC")
 
