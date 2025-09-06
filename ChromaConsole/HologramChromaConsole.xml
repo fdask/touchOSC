@@ -876,7 +876,7 @@ end]]></value>
 <key><![CDATA[text]]></key>
 <locked>0</locked>
 <lockedDefaultCurrent>1</lockedDefaultCurrent>
-<default><![CDATA[0]]></default>
+<default><![CDATA[9]]></default>
 <defaultPull>0</defaultPull>
 </value>
 <value>
@@ -1373,7 +1373,7 @@ end]]></value>
 <key><![CDATA[text]]></key>
 <locked>0</locked>
 <lockedDefaultCurrent>1</lockedDefaultCurrent>
-<default><![CDATA[0]]></default>
+<default><![CDATA[14]]></default>
 <defaultPull>0</defaultPull>
 </value>
 <value>
@@ -1870,7 +1870,7 @@ end]]></value>
 <key><![CDATA[text]]></key>
 <locked>0</locked>
 <lockedDefaultCurrent>1</lockedDefaultCurrent>
-<default><![CDATA[0]]></default>
+<default><![CDATA[37]]></default>
 <defaultPull>0</defaultPull>
 </value>
 <value>
@@ -2367,7 +2367,7 @@ end]]></value>
 <key><![CDATA[text]]></key>
 <locked>0</locked>
 <lockedDefaultCurrent>1</lockedDefaultCurrent>
-<default><![CDATA[0]]></default>
+<default><![CDATA[105]]></default>
 <defaultPull>0</defaultPull>
 </value>
 <value>
@@ -2945,7 +2945,7 @@ end]]></value>
 <key><![CDATA[text]]></key>
 <locked>0</locked>
 <lockedDefaultCurrent>1</lockedDefaultCurrent>
-<default><![CDATA[0]]></default>
+<default><![CDATA[67]]></default>
 <defaultPull>0</defaultPull>
 </value>
 <value>
@@ -3442,7 +3442,7 @@ end]]></value>
 <key><![CDATA[text]]></key>
 <locked>0</locked>
 <lockedDefaultCurrent>1</lockedDefaultCurrent>
-<default><![CDATA[0]]></default>
+<default><![CDATA[57]]></default>
 <defaultPull>0</defaultPull>
 </value>
 <value>
@@ -3939,7 +3939,7 @@ end]]></value>
 <key><![CDATA[text]]></key>
 <locked>0</locked>
 <lockedDefaultCurrent>1</lockedDefaultCurrent>
-<default><![CDATA[0]]></default>
+<default><![CDATA[38]]></default>
 <defaultPull>0</defaultPull>
 </value>
 <value>
@@ -4436,7 +4436,7 @@ end]]></value>
 <key><![CDATA[text]]></key>
 <locked>0</locked>
 <lockedDefaultCurrent>1</lockedDefaultCurrent>
-<default><![CDATA[0]]></default>
+<default><![CDATA[28]]></default>
 <defaultPull>0</defaultPull>
 </value>
 <value>
@@ -5014,7 +5014,7 @@ end]]></value>
 <key><![CDATA[text]]></key>
 <locked>0</locked>
 <lockedDefaultCurrent>1</lockedDefaultCurrent>
-<default><![CDATA[0]]></default>
+<default><![CDATA[76]]></default>
 <defaultPull>0</defaultPull>
 </value>
 <value>
@@ -5511,7 +5511,7 @@ end]]></value>
 <key><![CDATA[text]]></key>
 <locked>0</locked>
 <lockedDefaultCurrent>1</lockedDefaultCurrent>
-<default><![CDATA[0]]></default>
+<default><![CDATA[125]]></default>
 <defaultPull>0</defaultPull>
 </value>
 <value>
@@ -6008,7 +6008,7 @@ end]]></value>
 <key><![CDATA[text]]></key>
 <locked>0</locked>
 <lockedDefaultCurrent>1</lockedDefaultCurrent>
-<default><![CDATA[0]]></default>
+<default><![CDATA[116]]></default>
 <defaultPull>0</defaultPull>
 </value>
 <value>
@@ -6505,7 +6505,7 @@ end]]></value>
 <key><![CDATA[text]]></key>
 <locked>0</locked>
 <lockedDefaultCurrent>1</lockedDefaultCurrent>
-<default><![CDATA[0]]></default>
+<default><![CDATA[50]]></default>
 <defaultPull>0</defaultPull>
 </value>
 <value>
@@ -8158,7 +8158,7 @@ end]]></value>
 <key><![CDATA[text]]></key>
 <locked>0</locked>
 <lockedDefaultCurrent>1</lockedDefaultCurrent>
-<default><![CDATA[0]]></default>
+<default><![CDATA[1]]></default>
 <defaultPull>0</defaultPull>
 </value>
 <value>
@@ -8655,7 +8655,7 @@ end]]></value>
 <key><![CDATA[text]]></key>
 <locked>0</locked>
 <lockedDefaultCurrent>1</lockedDefaultCurrent>
-<default><![CDATA[0]]></default>
+<default><![CDATA[110]]></default>
 <defaultPull>0</defaultPull>
 </value>
 <value>
@@ -8852,8 +8852,76 @@ end]]></value>
 </property>
 <property type='s'>
 <key><![CDATA[script]]></key>
-<value><![CDATA[function onReceiveNotify(key, value)
+<value><![CDATA[function setButtons(active)
+  -- button 0.  Off
+  if (active ~= 0) then 
+    bVal = 0
+  else
+    bVal = 1
+  end
+  
+  self:findByName("character.button.off", true).values['x'] = bVal
+  
+  -- button 1. Drive
+  if (active ~= 1) then
+    bVal = 0
+  else
+    bVal = 1
+  end
+  
+  self:findByName("character.button.drive", true).values['x'] = bVal
+  
+  -- button 2. Sweeten
+  if (active ~= 2) then
+    bVal = 0
+  else
+    bVal = 1
+  end
+  
+  self:findByName("character.button.sweeten", true).values['x'] = bVal
+  
+  -- button 3.  Fuzz
+  if (active ~= 3) then
+    bVal = 0
+  else
+    bVal = 1
+  end
+  
+  self:findByName("character.button.fuzz", true).values['x'] = bVal
+  
+  -- button 4.  Howl
+  if (active ~= 4) then
+    bVal = 0
+  else
+    bVal = 1
+  end
+  
+  self:findByName("character.button.howl", true).values['x'] = bVal
+  
+  -- button 5.  Swell
+  if (active ~= 5) then
+    bVal = 0
+  else
+    bVal = 1
+  end
+  
+  self:findByName("character.button.swell", true).values['x'] = bVal
+end
 
+function onReceiveNotify(msg, val)
+  if (msg == "switchSelect") then
+    -- set all buttons
+    setButtons(val)
+    
+    -- send midi
+    if (val == 0) then
+      midiVal = 127
+    else  
+      midiVal = (val - 1) * 22
+    end
+    
+    sendMIDI({ MIDIMessageType.CONTROLCHANGE, 16, midiVal })
+  end
 end]]></value>
 </property>
 <property type='i'>
@@ -9029,44 +9097,17 @@ end]]></value>
 <property type='s'>
 <key><![CDATA[script]]></key>
 <value><![CDATA[function init()
-    local characterButtons = root.children["characterButtons"]
-    local offButtonGroup = characterButtons.children["characterButton.off"]
-    local offButton = offButtonGroup.children["character.button.off"]
-
-    offButton.values['x'] = 1
-    sendMIDI({ MIDIMessageType.CONTROLCHANGE, 16, 127 })
+  -- off button defaults to ON
+  root:findByName("characterButtons"):notify("switchSelect", 0)
 end
 
 function onValueChanged(val) 
-  if (val == "touch") then
-    local characterButtons = root.children["characterButtons"]
+  if (val == "touch" and self.values.x == 1) then
+    -- prevent turning button off
+    self.values['x'] = 1
     
-    local offButtonGroup = characterButtons.children["characterButton.off"]
-    local offButton = offButtonGroup.children["character.button.off"]
-    
-    local driveButtonGroup = characterButtons.children["characterButton.drive"]
-    local driveButton = driveButtonGroup.children["character.button.drive"]
-    
-    local sweetenButtonGroup = characterButtons.children["characterButton.sweeten"]
-    local sweetenButton = sweetenButtonGroup.children["character.button.sweeten"]
-    
-    local fuzzButtonGroup = characterButtons.children["characterButton.fuzz"]
-    local fuzzButton = fuzzButtonGroup.children["character.button.fuzz"]
-    
-    local howlButtonGroup = characterButtons.children["characterButton.howl"]
-    local howlButton = howlButtonGroup.children["character.button.howl"]
-
-    local swellButtonGroup = characterButtons.children["characterButton.swell"]
-    local swellButton = swellButtonGroup.children["character.button.swell"]
-
-    sendMIDI({ MIDIMessageType.CONTROLCHANGE, 16, 127 })
-    
-    offButton.values['x'] = 1
-    driveButton.values['x'] = 0
-    sweetenButton.values['x'] = 0
-    fuzzButton.values['x'] = 0
-    howlButton.values['x'] = 0
-    swellButton.values['x'] = 0    
+    -- notify button group of change
+    root:findByName("characterButtons"):notify("switchSelect", 0)
   end
 end]]></value>
 </property>
@@ -9375,43 +9416,17 @@ end]]></value>
 <property type='s'>
 <key><![CDATA[script]]></key>
 <value><![CDATA[function init()
-    local characterButtons = root.children["characterButtons"]
-    local driveButtonGroup = characterButtons.children["characterButton.drive"]
-    local driveButton = driveButtonGroup.children["character.button.drive"]
-
-    driveButton.values['x'] = 0
+  -- button defaults to OFF
+  self.values['x'] = 0
 end
 
 function onValueChanged(val) 
-  if (val == "touch") then
-    local characterButtons = root.children["characterButtons"]
+  if (val == "touch" and self.values.x == 1) then
+    -- prevent turning button off
+    self.values['x'] = 1
     
-    local offButtonGroup = characterButtons.children["characterButton.off"]
-    local offButton = offButtonGroup.children["character.button.off"]
-    
-    local driveButtonGroup = characterButtons.children["characterButton.drive"]
-    local driveButton = driveButtonGroup.children["character.button.drive"]
-    
-    local sweetenButtonGroup = characterButtons.children["characterButton.sweeten"]
-    local sweetenButton = sweetenButtonGroup.children["character.button.sweeten"]
-    
-    local fuzzButtonGroup = characterButtons.children["characterButton.fuzz"]
-    local fuzzButton = fuzzButtonGroup.children["character.button.fuzz"]
-    
-    local howlButtonGroup = characterButtons.children["characterButton.howl"]
-    local howlButton = howlButtonGroup.children["character.button.howl"]
-
-    local swellButtonGroup = characterButtons.children["characterButton.swell"]
-    local swellButton = swellButtonGroup.children["character.button.swell"]
-
-    sendMIDI({ MIDIMessageType.CONTROLCHANGE, 16, 0 })
-    
-    offButton.values['x'] = 0
-    driveButton.values['x'] = 1
-    sweetenButton.values['x'] = 0
-    fuzzButton.values['x'] = 0
-    howlButton.values['x'] = 0
-    swellButton.values['x'] = 0    
+    -- notify button group of change
+    root:findByName("characterButtons"):notify("switchSelect", 1)
   end
 end]]></value>
 </property>
@@ -9720,43 +9735,17 @@ end]]></value>
 <property type='s'>
 <key><![CDATA[script]]></key>
 <value><![CDATA[function init()
-    local characterButtons = root.children["characterButtons"]
-    local sweetenButtonGroup = characterButtons.children["characterButton.sweeten"]
-    local sweetenButton = sweetenButtonGroup.children["character.button.sweeten"]
-
-    sweetenButton.values['x'] = 0
+  -- button defaults to OFF
+  self.values['x'] = 0
 end
 
 function onValueChanged(val) 
-  if (val == "touch") then
-    local characterButtons = root.children["characterButtons"]
+  if (val == "touch" and self.values.x == 1) then
+    -- prevent turning button off
+    self.values['x'] = 1
     
-    local offButtonGroup = characterButtons.children["characterButton.off"]
-    local offButton = offButtonGroup.children["character.button.off"]
-    
-    local driveButtonGroup = characterButtons.children["characterButton.drive"]
-    local driveButton = driveButtonGroup.children["character.button.drive"]
-    
-    local sweetenButtonGroup = characterButtons.children["characterButton.sweeten"]
-    local sweetenButton = sweetenButtonGroup.children["character.button.sweeten"]
-    
-    local fuzzButtonGroup = characterButtons.children["characterButton.fuzz"]
-    local fuzzButton = fuzzButtonGroup.children["character.button.fuzz"]
-    
-    local howlButtonGroup = characterButtons.children["characterButton.howl"]
-    local howlButton = howlButtonGroup.children["character.button.howl"]
-
-    local swellButtonGroup = characterButtons.children["characterButton.swell"]
-    local swellButton = swellButtonGroup.children["character.button.swell"]
-
-    sendMIDI({ MIDIMessageType.CONTROLCHANGE, 16, 22 })
-    
-    offButton.values['x'] = 0
-    driveButton.values['x'] = 0
-    sweetenButton.values['x'] = 1
-    fuzzButton.values['x'] = 0
-    howlButton.values['x'] = 0
-    swellButton.values['x'] = 0    
+    -- notify button group of change
+    root:findByName("characterButtons"):notify("switchSelect", 2)
   end
 end]]></value>
 </property>
@@ -10065,43 +10054,17 @@ end]]></value>
 <property type='s'>
 <key><![CDATA[script]]></key>
 <value><![CDATA[function init()
-    local characterButtons = root.children["characterButtons"]
-    local fuzzButtonGroup = characterButtons.children["characterButton.fuzz"]
-    local fuzzButton = fuzzButtonGroup.children["character.button.fuzz"]
-
-    fuzzButton.values['x'] = 0
+  -- button defaults to OFF
+  self.values['x'] = 0
 end
 
 function onValueChanged(val) 
-  if (val == "touch") then
-    local characterButtons = root.children["characterButtons"]
+  if (val == "touch" and self.values.x == 1) then
+    -- prevent turning button off
+    self.values['x'] = 1
     
-    local offButtonGroup = characterButtons.children["characterButton.off"]
-    local offButton = offButtonGroup.children["character.button.off"]
-    
-    local driveButtonGroup = characterButtons.children["characterButton.drive"]
-    local driveButton = driveButtonGroup.children["character.button.drive"]
-    
-    local sweetenButtonGroup = characterButtons.children["characterButton.sweeten"]
-    local sweetenButton = sweetenButtonGroup.children["character.button.sweeten"]
-    
-    local fuzzButtonGroup = characterButtons.children["characterButton.fuzz"]
-    local fuzzButton = fuzzButtonGroup.children["character.button.fuzz"]
-    
-    local howlButtonGroup = characterButtons.children["characterButton.howl"]
-    local howlButton = howlButtonGroup.children["character.button.howl"]
-
-    local swellButtonGroup = characterButtons.children["characterButton.swell"]
-    local swellButton = swellButtonGroup.children["character.button.swell"]
-
-    sendMIDI({ MIDIMessageType.CONTROLCHANGE, 16, 44 })
-    
-    offButton.values['x'] = 0
-    driveButton.values['x'] = 0
-    sweetenButton.values['x'] = 0
-    fuzzButton.values['x'] = 1
-    howlButton.values['x'] = 0
-    swellButton.values['x'] = 0    
+    -- notify button group of change
+    root:findByName("characterButtons"):notify("switchSelect", 3)
   end
 end]]></value>
 </property>
@@ -10410,43 +10373,17 @@ end]]></value>
 <property type='s'>
 <key><![CDATA[script]]></key>
 <value><![CDATA[function init()
-    local characterButtons = root.children["characterButtons"]
-    local howlButtonGroup = characterButtons.children["characterButton.howl"]
-    local howlButton = howlButtonGroup.children["character.button.howl"]
-
-    howlButton.values['x'] = 0
+  -- button defaults to OFF
+  self.values['x'] = 0
 end
 
 function onValueChanged(val) 
-  if (val == "touch") then
-    local characterButtons = root.children["characterButtons"]
+  if (val == "touch" and self.values.x == 1) then
+    -- prevent turning button off
+    self.values['x'] = 1
     
-    local offButtonGroup = characterButtons.children["characterButton.off"]
-    local offButton = offButtonGroup.children["character.button.off"]
-    
-    local driveButtonGroup = characterButtons.children["characterButton.drive"]
-    local driveButton = driveButtonGroup.children["character.button.drive"]
-    
-    local sweetenButtonGroup = characterButtons.children["characterButton.sweeten"]
-    local sweetenButton = sweetenButtonGroup.children["character.button.sweeten"]
-    
-    local fuzzButtonGroup = characterButtons.children["characterButton.fuzz"]
-    local fuzzButton = fuzzButtonGroup.children["character.button.fuzz"]
-    
-    local howlButtonGroup = characterButtons.children["characterButton.howl"]
-    local howlButton = howlButtonGroup.children["character.button.howl"]
-
-    local swellButtonGroup = characterButtons.children["characterButton.swell"]
-    local swellButton = swellButtonGroup.children["character.button.swell"]
-
-    sendMIDI({ MIDIMessageType.CONTROLCHANGE, 16, 66 })
-    
-    offButton.values['x'] = 0
-    driveButton.values['x'] = 0
-    sweetenButton.values['x'] = 0
-    fuzzButton.values['x'] = 0
-    howlButton.values['x'] = 1
-    swellButton.values['x'] = 0    
+    -- notify button group of change
+    root:findByName("characterButtons"):notify("switchSelect", 4)
   end
 end]]></value>
 </property>
@@ -10755,43 +10692,17 @@ end]]></value>
 <property type='s'>
 <key><![CDATA[script]]></key>
 <value><![CDATA[function init()
-    local characterButtons = root.children["characterButtons"]
-    local swellButtonGroup = characterButtons.children["characterButton.swell"]
-    local swellButton = swellButtonGroup.children["character.button.swell"]
-
-    swellButton.values['x'] = 0
+  -- button defaults to OFF
+  self.values['x'] = 0
 end
 
 function onValueChanged(val) 
-  if (val == "touch") then
-    local characterButtons = root.children["characterButtons"]
+  if (val == "touch" and self.values.x == 1) then
+    -- prevent turning button off
+    self.values['x'] = 1
     
-    local offButtonGroup = characterButtons.children["characterButton.off"]
-    local offButton = offButtonGroup.children["character.button.off"]
-    
-    local driveButtonGroup = characterButtons.children["characterButton.drive"]
-    local driveButton = driveButtonGroup.children["character.button.drive"]
-    
-    local sweetenButtonGroup = characterButtons.children["characterButton.sweeten"]
-    local sweetenButton = sweetenButtonGroup.children["character.button.sweeten"]
-    
-    local fuzzButtonGroup = characterButtons.children["characterButton.fuzz"]
-    local fuzzButton = fuzzButtonGroup.children["character.button.fuzz"]
-    
-    local howlButtonGroup = characterButtons.children["characterButton.howl"]
-    local howlButton = howlButtonGroup.children["character.button.howl"]
-
-    local swellButtonGroup = characterButtons.children["characterButton.swell"]
-    local swellButton = swellButtonGroup.children["character.button.swell"]
-
-    sendMIDI({ MIDIMessageType.CONTROLCHANGE, 16, 88 })
-    
-    offButton.values['x'] = 0
-    driveButton.values['x'] = 0
-    sweetenButton.values['x'] = 0
-    fuzzButton.values['x'] = 0
-    howlButton.values['x'] = 0
-    swellButton.values['x'] = 1    
+    -- notify button group of change
+    root:findByName("characterButtons"):notify("switchSelect", 5)
   end
 end]]></value>
 </property>
@@ -11008,6 +10919,80 @@ end]]></value>
 <key><![CDATA[pointerPriority]]></key>
 <value>0</value>
 </property>
+<property type='s'>
+<key><![CDATA[script]]></key>
+<value><![CDATA[function setButtons(active)
+  -- button 0.  Off
+  if (active ~= 0) then 
+    bVal = 0
+  else
+    bVal = 1
+  end
+  
+  self:findByName("movement.button.off", true).values['x'] = bVal
+  
+  -- button 1. Doubler
+  if (active ~= 1) then
+    bVal = 0
+  else
+    bVal = 1
+  end
+  
+  self:findByName("movement.button.doubler", true).values['x'] = bVal
+  
+  -- button 2. Vibrato
+  if (active ~= 2) then
+    bVal = 0
+  else
+    bVal = 1
+  end
+  
+  self:findByName("movement.button.vibrato", true).values['x'] = bVal
+  
+  -- button 3.  Phaser
+  if (active ~= 3) then
+    bVal = 0
+  else
+    bVal = 1
+  end
+  
+  self:findByName("movement.button.phaser", true).values['x'] = bVal
+  
+  -- button 4. Tremolo
+  if (active ~= 4) then
+    bVal = 0
+  else
+    bVal = 1
+  end
+  
+  self:findByName("movement.button.tremolo", true).values['x'] = bVal
+  
+  -- button 5.  Pitch
+  if (active ~= 5) then
+    bVal = 0
+  else
+    bVal = 1
+  end
+  
+  self:findByName("movement.button.pitch", true).values['x'] = bVal
+end
+
+function onReceiveNotify(msg, val)
+  if (msg == "switchSelect") then
+    -- set all buttons
+    setButtons(val)
+    
+    -- send midi
+    if (val == 0) then
+      midiVal = 127
+    else  
+      midiVal = (val - 1) * 22
+    end
+    
+    sendMIDI({ MIDIMessageType.CONTROLCHANGE, 17, midiVal })
+  end
+end]]></value>
+</property>
 <property type='i'>
 <key><![CDATA[shape]]></key>
 <value>1</value>
@@ -11181,44 +11166,17 @@ end]]></value>
 <property type='s'>
 <key><![CDATA[script]]></key>
 <value><![CDATA[function init()
-    local movementButtons = root.children["movementButtons"]
-    local offButtonGroup = movementButtons.children["movementButton.off"]
-    local offButton = offButtonGroup.children["movement.button.off"]
-
-    offButton.values['x'] = 1
-    sendMIDI({ MIDIMessageType.CONTROLCHANGE, 17, 127 })
+  -- off button defaults to ON
+  root:findByName("movementButtons"):notify("switchSelect", 0)
 end
 
 function onValueChanged(val) 
-  if (val == "touch") then
-    local movementButtons = root.children["movementButtons"]
+  if (val == "touch" and self.values.x == 1) then
+    -- prevent turning button off
+    self.values['x'] = 1
     
-    local offButtonGroup = movementButtons.children["movementButton.off"]
-    local offButton = offButtonGroup.children["movement.button.off"]
-    
-    local doublerButtonGroup = movementButtons.children["movementButton.doubler"]
-    local doublerButton = doublerButtonGroup.children["movement.button.doubler"]
-    
-    local vibratoButtonGroup = movementButtons.children["movementButton.vibrato"]
-    local vibratoButton = vibratoButtonGroup.children["movement.button.vibrato"]
-    
-    local phaserButtonGroup = movementButtons.children["movementButton.phaser"]
-    local phaserButton = phaserButtonGroup.children["movement.button.phaser"]
-    
-    local tremoloButtonGroup = movementButtons.children["movementButton.tremolo"]
-    local tremoloButton = tremoloButtonGroup.children["movement.button.tremolo"]
-
-    local pitchButtonGroup = movementButtons.children["movementButton.pitch"]
-    local pitchButton = pitchButtonGroup.children["movement.button.pitch"]
-
-    sendMIDI({ MIDIMessageType.CONTROLCHANGE, 17, 127 })
-    
-    offButton.values['x'] = 1
-    doublerButton.values['x'] = 0
-    vibratoButton.values['x'] = 0
-    phaserButton.values['x'] = 0
-    tremoloButton.values['x'] = 0
-    pitchButton.values['x'] = 0    
+    -- notify button group of change
+    root:findByName("movementButtons"):notify("switchSelect", 0)
   end
 end]]></value>
 </property>
@@ -11527,43 +11485,17 @@ end]]></value>
 <property type='s'>
 <key><![CDATA[script]]></key>
 <value><![CDATA[function init()
-    local movementButtons = root.children["movementButtons"]
-    local doublerButtonGroup = movementButtons.children["movementButton.doubler"]
-    local doublerButton = doublerButtonGroup.children["movement.button.doubler"]
-
-    doublerButton.values['x'] = 0
+  -- button defaults to OFF
+  self.values['x'] = 0
 end
 
 function onValueChanged(val) 
-  if (val == "touch") then
-    local movementButtons = root.children["movementButtons"]
+  if (val == "touch" and self.values.x == 1) then
+    -- prevent turning button off
+    self.values['x'] = 1
     
-    local offButtonGroup = movementButtons.children["movementButton.off"]
-    local offButton = offButtonGroup.children["movement.button.off"]
-    
-    local doublerButtonGroup = movementButtons.children["movementButton.doubler"]
-    local doublerButton = doublerButtonGroup.children["movement.button.doubler"]
-    
-    local vibratoButtonGroup = movementButtons.children["movementButton.vibrato"]
-    local vibratoButton = vibratoButtonGroup.children["movement.button.vibrato"]
-    
-    local phaserButtonGroup = movementButtons.children["movementButton.phaser"]
-    local phaserButton = phaserButtonGroup.children["movement.button.phaser"]
-    
-    local tremoloButtonGroup = movementButtons.children["movementButton.tremolo"]
-    local tremoloButton = tremoloButtonGroup.children["movement.button.tremolo"]
-
-    local pitchButtonGroup = movementButtons.children["movementButton.pitch"]
-    local pitchButton = pitchButtonGroup.children["movement.button.pitch"]
-
-    sendMIDI({ MIDIMessageType.CONTROLCHANGE, 17, 0 })
-    
-    offButton.values['x'] = 0
-    doublerButton.values['x'] = 1
-    vibratoButton.values['x'] = 0
-    phaserButton.values['x'] = 0
-    tremoloButton.values['x'] = 0
-    pitchButton.values['x'] = 0    
+    -- notify button group of change
+    root:findByName("movementButtons"):notify("switchSelect", 1)
   end
 end]]></value>
 </property>
@@ -11872,43 +11804,17 @@ end]]></value>
 <property type='s'>
 <key><![CDATA[script]]></key>
 <value><![CDATA[function init()
-    local movementButtons = root.children["movementButtons"]
-    local vibratoButtonGroup = movementButtons.children["movementButton.vibrato"]
-    local vibratoButton = vibratoButtonGroup.children["movement.button.vibrato"]
-
-    vibratoButton.values['x'] = 0
+  -- button defaults to OFF
+  self.values['x'] = 0
 end
 
 function onValueChanged(val) 
-  if (val == "touch") then
-    local movementButtons = root.children["movementButtons"]
+  if (val == "touch" and self.values.x == 1) then
+    -- prevent turning button off
+    self.values['x'] = 1
     
-    local offButtonGroup = movementButtons.children["movementButton.off"]
-    local offButton = offButtonGroup.children["movement.button.off"]
-    
-    local doublerButtonGroup = movementButtons.children["movementButton.doubler"]
-    local doublerButton = doublerButtonGroup.children["movement.button.doubler"]
-    
-    local vibratoButtonGroup = movementButtons.children["movementButton.vibrato"]
-    local vibratoButton = vibratoButtonGroup.children["movement.button.vibrato"]
-    
-    local phaserButtonGroup = movementButtons.children["movementButton.phaser"]
-    local phaserButton = phaserButtonGroup.children["movement.button.phaser"]
-    
-    local tremoloButtonGroup = movementButtons.children["movementButton.tremolo"]
-    local tremoloButton = tremoloButtonGroup.children["movement.button.tremolo"]
-
-    local pitchButtonGroup = movementButtons.children["movementButton.pitch"]
-    local pitchButton = pitchButtonGroup.children["movement.button.pitch"]
-
-    sendMIDI({ MIDIMessageType.CONTROLCHANGE, 17, 22 })
-    
-    offButton.values['x'] = 0
-    doublerButton.values['x'] = 0
-    vibratoButton.values['x'] = 1
-    phaserButton.values['x'] = 0
-    tremoloButton.values['x'] = 0
-    pitchButton.values['x'] = 0    
+    -- notify button group of change
+    root:findByName("movementButtons"):notify("switchSelect", 2)
   end
 end]]></value>
 </property>
@@ -12217,43 +12123,17 @@ end]]></value>
 <property type='s'>
 <key><![CDATA[script]]></key>
 <value><![CDATA[function init()
-    local movementButtons = root.children["movementButtons"]
-    local phaserButtonGroup = movementButtons.children["movementButton.phaser"]
-    local phaserButton = phaserButtonGroup.children["movement.button.phaser"]
-
-    phaserButton.values['x'] = 0
+  -- button defaults to OFF
+  self.values['x'] = 0
 end
 
 function onValueChanged(val) 
-  if (val == "touch") then
-    local movementButtons = root.children["movementButtons"]
+  if (val == "touch" and self.values.x == 1) then
+    -- prevent turning button off
+    self.values['x'] = 1
     
-    local offButtonGroup = movementButtons.children["movementButton.off"]
-    local offButton = offButtonGroup.children["movement.button.off"]
-    
-    local doublerButtonGroup = movementButtons.children["movementButton.doubler"]
-    local doublerButton = doublerButtonGroup.children["movement.button.doubler"]
-    
-    local vibratoButtonGroup = movementButtons.children["movementButton.vibrato"]
-    local vibratoButton = vibratoButtonGroup.children["movement.button.vibrato"]
-    
-    local phaserButtonGroup = movementButtons.children["movementButton.phaser"]
-    local phaserButton = phaserButtonGroup.children["movement.button.phaser"]
-    
-    local tremoloButtonGroup = movementButtons.children["movementButton.tremolo"]
-    local tremoloButton = tremoloButtonGroup.children["movement.button.tremolo"]
-
-    local pitchButtonGroup = movementButtons.children["movementButton.pitch"]
-    local pitchButton = pitchButtonGroup.children["movement.button.pitch"]
-
-    sendMIDI({ MIDIMessageType.CONTROLCHANGE, 17, 44 })
-    
-    offButton.values['x'] = 0
-    doublerButton.values['x'] = 0
-    vibratoButton.values['x'] = 0
-    phaserButton.values['x'] = 1
-    tremoloButton.values['x'] = 0
-    pitchButton.values['x'] = 0    
+    -- notify button group of change
+    root:findByName("movementButtons"):notify("switchSelect", 3)
   end
 end]]></value>
 </property>
@@ -12562,43 +12442,17 @@ end]]></value>
 <property type='s'>
 <key><![CDATA[script]]></key>
 <value><![CDATA[function init()
-    local movementButtons = root.children["movementButtons"]
-    local tremoloButtonGroup = movementButtons.children["movementButton.tremolo"]
-    local tremoloButton = tremoloButtonGroup.children["movement.button.tremolo"]
-
-    tremoloButton.values['x'] = 0
+  -- button defaults to OFF
+  self.values['x'] = 0
 end
 
 function onValueChanged(val) 
-  if (val == "touch") then
-    local movementButtons = root.children["movementButtons"]
+  if (val == "touch" and self.values.x == 1) then
+    -- prevent turning button off
+    self.values['x'] = 1
     
-    local offButtonGroup = movementButtons.children["movementButton.off"]
-    local offButton = offButtonGroup.children["movement.button.off"]
-    
-    local doublerButtonGroup = movementButtons.children["movementButton.doubler"]
-    local doublerButton = doublerButtonGroup.children["movement.button.doubler"]
-    
-    local vibratoButtonGroup = movementButtons.children["movementButton.vibrato"]
-    local vibratoButton = vibratoButtonGroup.children["movement.button.vibrato"]
-    
-    local phaserButtonGroup = movementButtons.children["movementButton.phaser"]
-    local phaserButton = phaserButtonGroup.children["movement.button.phaser"]
-    
-    local tremoloButtonGroup = movementButtons.children["movementButton.tremolo"]
-    local tremoloButton = tremoloButtonGroup.children["movement.button.tremolo"]
-
-    local pitchButtonGroup = movementButtons.children["movementButton.pitch"]
-    local pitchButton = pitchButtonGroup.children["movement.button.pitch"]
-
-    sendMIDI({ MIDIMessageType.CONTROLCHANGE, 17, 66 })
-    
-    offButton.values['x'] = 0
-    doublerButton.values['x'] = 0
-    vibratoButton.values['x'] = 0
-    phaserButton.values['x'] = 0
-    tremoloButton.values['x'] = 1
-    pitchButton.values['x'] = 0    
+    -- notify button group of change
+    root:findByName("movementButtons"):notify("switchSelect", 4)
   end
 end]]></value>
 </property>
@@ -12907,43 +12761,17 @@ end]]></value>
 <property type='s'>
 <key><![CDATA[script]]></key>
 <value><![CDATA[function init()
-    local movementButtons = root.children["movementButtons"]
-    local pitchButtonGroup = movementButtons.children["movementButton.pitch"]
-    local pitchButton = pitchButtonGroup.children["movement.button.pitch"]
-
-    pitchButton.values['x'] = 0
+  -- button defaults to OFF
+  self.values['x'] = 0
 end
 
 function onValueChanged(val) 
-  if (val == "touch") then
-    local movementButtons = root.children["movementButtons"]
+  if (val == "touch" and self.values.x == 1) then
+    -- prevent turning button off
+    self.values['x'] = 1
     
-    local offButtonGroup = movementButtons.children["movementButton.off"]
-    local offButton = offButtonGroup.children["movement.button.off"]
-    
-    local doublerButtonGroup = movementButtons.children["movementButton.doubler"]
-    local doublerButton = doublerButtonGroup.children["movement.button.doubler"]
-    
-    local vibratoButtonGroup = movementButtons.children["movementButton.vibrato"]
-    local vibratoButton = vibratoButtonGroup.children["movement.button.vibrato"]
-    
-    local phaserButtonGroup = movementButtons.children["movementButton.phaser"]
-    local phaserButton = phaserButtonGroup.children["movement.button.phaser"]
-    
-    local tremoloButtonGroup = movementButtons.children["movementButton.tremolo"]
-    local tremoloButton = tremoloButtonGroup.children["movement.button.tremolo"]
-
-    local pitchButtonGroup = movementButtons.children["movementButton.pitch"]
-    local pitchButton = pitchButtonGroup.children["movement.button.pitch"]
-
-    sendMIDI({ MIDIMessageType.CONTROLCHANGE, 17, 88 })
-    
-    offButton.values['x'] = 0
-    doublerButton.values['x'] = 0
-    vibratoButton.values['x'] = 0
-    phaserButton.values['x'] = 0
-    tremoloButton.values['x'] = 0
-    pitchButton.values['x'] = 1  
+    -- notify button group of change
+    root:findByName("movementButtons"):notify("switchSelect", 5)
   end
 end]]></value>
 </property>
@@ -13160,6 +12988,80 @@ end]]></value>
 <key><![CDATA[pointerPriority]]></key>
 <value>0</value>
 </property>
+<property type='s'>
+<key><![CDATA[script]]></key>
+<value><![CDATA[function setButtons(active)
+  -- button 0.  Off
+  if (active ~= 0) then 
+    bVal = 0
+  else
+    bVal = 1
+  end
+  
+  self:findByName("diffusion.button.off", true).values['x'] = bVal
+  
+  -- button 1. Cascade
+  if (active ~= 1) then
+    bVal = 0
+  else
+    bVal = 1
+  end
+  
+  self:findByName("diffusion.button.cascade", true).values['x'] = bVal
+  
+  -- button 2. Reels
+  if (active ~= 2) then
+    bVal = 0
+  else
+    bVal = 1
+  end
+  
+  self:findByName("diffusion.button.reels", true).values['x'] = bVal
+  
+  -- button 3.  Space
+  if (active ~= 3) then
+    bVal = 0
+  else
+    bVal = 1
+  end
+  
+  self:findByName("diffusion.button.space", true).values['x'] = bVal
+  
+  -- button 4. Collage
+  if (active ~= 4) then
+    bVal = 0
+  else
+    bVal = 1
+  end
+  
+  self:findByName("diffusion.button.collage", true).values['x'] = bVal
+  
+  -- button 5.  Reverse
+  if (active ~= 5) then
+    bVal = 0
+  else
+    bVal = 1
+  end
+  
+  self:findByName("diffusion.button.reverse", true).values['x'] = bVal
+end
+
+function onReceiveNotify(msg, val)
+  if (msg == "switchSelect") then
+    -- set all buttons
+    setButtons(val)
+    
+    -- send midi
+    if (val == 0) then
+      midiVal = 127
+    else  
+      midiVal = (val - 1) * 22
+    end
+    
+    sendMIDI({ MIDIMessageType.CONTROLCHANGE, 18, midiVal })
+  end
+end]]></value>
+</property>
 <property type='i'>
 <key><![CDATA[shape]]></key>
 <value>1</value>
@@ -13333,44 +13235,17 @@ end]]></value>
 <property type='s'>
 <key><![CDATA[script]]></key>
 <value><![CDATA[function init()
-    local diffusionButtons = root.children["diffusionButtons"]
-    local offButtonGroup = diffusionButtons.children["diffusionButton.off"]
-    local offButton = offButtonGroup.children["diffusion.button.off"]
-
-    offButton.values['x'] = 1
-    sendMIDI({ MIDIMessageType.CONTROLCHANGE, 18, 127 })
+  -- off button defaults to ON
+  root:findByName("diffusionButtons"):notify("switchSelect", 0)
 end
 
 function onValueChanged(val) 
-  if (val == "touch") then
-    local diffusionButtons = root.children["diffusionButtons"]
+  if (val == "touch" and self.values.x == 1) then
+    -- prevent turning button off
+    self.values['x'] = 1
     
-    local offButtonGroup = diffusionButtons.children["diffusionButton.off"]
-    local offButton = offButtonGroup.children["diffusion.button.off"]
-    
-    local cascadeButtonGroup = diffusionButtons.children["diffusionButton.cascade"]
-    local cascadeButton = cascadeButtonGroup.children["diffusion.button.cascade"]
-    
-    local reelsButtonGroup = diffusionButtons.children["diffusionButton.reels"]
-    local reelsButton = reelsButtonGroup.children["diffusion.button.reels"]
-    
-    local spaceButtonGroup = diffusionButtons.children["diffusionButton.space"]
-    local spaceButton = spaceButtonGroup.children["diffusion.button.space"]
-    
-    local collageButtonGroup = diffusionButtons.children["diffusionButton.collage"]
-    local collageButton = collageButtonGroup.children["diffusion.button.collage"]
-
-    local reverseButtonGroup = diffusionButtons.children["diffusionButton.reverse"]
-    local reverseButton = reverseButtonGroup.children["diffusion.button.reverse"]
-
-    sendMIDI({ MIDIMessageType.CONTROLCHANGE, 18, 127 })
-    
-    offButton.values['x'] = 1
-    cascadeButton.values['x'] = 0
-    reelsButton.values['x'] = 0
-    spaceButton.values['x'] = 0
-    collageButton.values['x'] = 0
-    reverseButton.values['x'] = 0    
+    -- notify button group of change
+    root:findByName("diffusionButtons"):notify("switchSelect", 0)
   end
 end]]></value>
 </property>
@@ -13679,43 +13554,17 @@ end]]></value>
 <property type='s'>
 <key><![CDATA[script]]></key>
 <value><![CDATA[function init()
-    local diffusionButtons = root.children["diffusionButtons"]
-    local cascadeButtonGroup = diffusionButtons.children["diffusionButton.cascade"]
-    local cascadeButton = cascadeButtonGroup.children["diffusion.button.cascade"]
-
-    cascadeButton.values['x'] = 0
+  -- button defaults to OFF
+  self.values['x'] = 0
 end
 
 function onValueChanged(val) 
-  if (val == "touch") then
-    local diffusionButtons = root.children["diffusionButtons"]
+  if (val == "touch" and self.values.x == 1) then
+    -- prevent turning button off
+    self.values['x'] = 1
     
-    local offButtonGroup = diffusionButtons.children["diffusionButton.off"]
-    local offButton = offButtonGroup.children["diffusion.button.off"]
-    
-    local cascadeButtonGroup = diffusionButtons.children["diffusionButton.cascade"]
-    local cascadeButton = cascadeButtonGroup.children["diffusion.button.cascade"]
-    
-    local reelsButtonGroup = diffusionButtons.children["diffusionButton.reels"]
-    local reelsButton = reelsButtonGroup.children["diffusion.button.reels"]
-    
-    local spaceButtonGroup = diffusionButtons.children["diffusionButton.space"]
-    local spaceButton = spaceButtonGroup.children["diffusion.button.space"]
-    
-    local collageButtonGroup = diffusionButtons.children["diffusionButton.collage"]
-    local collageButton = collageButtonGroup.children["diffusion.button.collage"]
-
-    local reverseButtonGroup = diffusionButtons.children["diffusionButton.reverse"]
-    local reverseButton = reverseButtonGroup.children["diffusion.button.reverse"]
-
-    sendMIDI({ MIDIMessageType.CONTROLCHANGE, 18, 0 })
-    
-    offButton.values['x'] = 0
-    cascadeButton.values['x'] = 1
-    reelsButton.values['x'] = 0
-    spaceButton.values['x'] = 0
-    collageButton.values['x'] = 0
-    reverseButton.values['x'] = 0    
+    -- notify button group of change
+    root:findByName("diffusionButtons"):notify("switchSelect", 1)
   end
 end]]></value>
 </property>
@@ -14024,43 +13873,17 @@ end]]></value>
 <property type='s'>
 <key><![CDATA[script]]></key>
 <value><![CDATA[function init()
-    local diffusionButtons = root.children["diffusionButtons"]
-    local reelsButtonGroup = diffusionButtons.children["diffusionButton.reels"]
-    local reelsButton = reelsButtonGroup.children["diffusion.button.reels"]
-
-    reelsButton.values['x'] = 0
+  -- button defaults to OFF
+  self.values['x'] = 0
 end
 
 function onValueChanged(val) 
-  if (val == "touch") then
-    local diffusionButtons = root.children["diffusionButtons"]
+  if (val == "touch" and self.values.x == 1) then
+    -- prevent turning button off
+    self.values['x'] = 1
     
-    local offButtonGroup = diffusionButtons.children["diffusionButton.off"]
-    local offButton = offButtonGroup.children["diffusion.button.off"]
-    
-    local cascadeButtonGroup = diffusionButtons.children["diffusionButton.cascade"]
-    local cascadeButton = cascadeButtonGroup.children["diffusion.button.cascade"]
-    
-    local reelsButtonGroup = diffusionButtons.children["diffusionButton.reels"]
-    local reelsButton = reelsButtonGroup.children["diffusion.button.reels"]
-    
-    local spaceButtonGroup = diffusionButtons.children["diffusionButton.space"]
-    local spaceButton = spaceButtonGroup.children["diffusion.button.space"]
-    
-    local collageButtonGroup = diffusionButtons.children["diffusionButton.collage"]
-    local collageButton = collageButtonGroup.children["diffusion.button.collage"]
-
-    local reverseButtonGroup = diffusionButtons.children["diffusionButton.reverse"]
-    local reverseButton = reverseButtonGroup.children["diffusion.button.reverse"]
-
-    sendMIDI({ MIDIMessageType.CONTROLCHANGE, 18, 22 })
-    
-    offButton.values['x'] = 0
-    cascadeButton.values['x'] = 0
-    reelsButton.values['x'] = 1
-    spaceButton.values['x'] = 0
-    collageButton.values['x'] = 0
-    reverseButton.values['x'] = 0    
+    -- notify button group of change
+    root:findByName("diffusionButtons"):notify("switchSelect", 2)
   end
 end]]></value>
 </property>
@@ -14369,43 +14192,17 @@ end]]></value>
 <property type='s'>
 <key><![CDATA[script]]></key>
 <value><![CDATA[function init()
-    local diffusionButtons = root.children["diffusionButtons"]
-    local spaceButtonGroup = diffusionButtons.children["diffusionButton.space"]
-    local spaceButton = spaceButtonGroup.children["diffusion.button.space"]
-
-    spaceButton.values['x'] = 0
+  -- button defaults to OFF
+  self.values['x'] = 0
 end
 
 function onValueChanged(val) 
-  if (val == "touch") then
-    local diffusionButtons = root.children["diffusionButtons"]
+  if (val == "touch" and self.values.x == 1) then
+    -- prevent turning button off
+    self.values['x'] = 1
     
-    local offButtonGroup = diffusionButtons.children["diffusionButton.off"]
-    local offButton = offButtonGroup.children["diffusion.button.off"]
-    
-    local cascadeButtonGroup = diffusionButtons.children["diffusionButton.cascade"]
-    local cascadeButton = cascadeButtonGroup.children["diffusion.button.cascade"]
-    
-    local reelsButtonGroup = diffusionButtons.children["diffusionButton.reels"]
-    local reelsButton = reelsButtonGroup.children["diffusion.button.reels"]
-    
-    local spaceButtonGroup = diffusionButtons.children["diffusionButton.space"]
-    local spaceButton = spaceButtonGroup.children["diffusion.button.space"]
-    
-    local collageButtonGroup = diffusionButtons.children["diffusionButton.collage"]
-    local collageButton = collageButtonGroup.children["diffusion.button.collage"]
-
-    local reverseButtonGroup = diffusionButtons.children["diffusionButton.reverse"]
-    local reverseButton = reverseButtonGroup.children["diffusion.button.reverse"]
-
-    sendMIDI({ MIDIMessageType.CONTROLCHANGE, 18, 44 })
-    
-    offButton.values['x'] = 0
-    cascadeButton.values['x'] = 0
-    reelsButton.values['x'] = 0
-    spaceButton.values['x'] = 1
-    collageButton.values['x'] = 0
-    reverseButton.values['x'] = 0    
+    -- notify button group of change
+    root:findByName("diffusionButtons"):notify("switchSelect", 3)
   end
 end]]></value>
 </property>
@@ -14714,43 +14511,17 @@ end]]></value>
 <property type='s'>
 <key><![CDATA[script]]></key>
 <value><![CDATA[function init()
-    local diffusionButtons = root.children["diffusionButtons"]
-    local collageButtonGroup = diffusionButtons.children["diffusionButton.collage"]
-    local collageButton = collageButtonGroup.children["diffusion.button.collage"]
-
-    collageButton.values['x'] = 0
+  -- button defaults to OFF
+  self.values['x'] = 0
 end
 
 function onValueChanged(val) 
-  if (val == "touch") then
-    local diffusionButtons = root.children["diffusionButtons"]
+  if (val == "touch" and self.values.x == 1) then
+    -- prevent turning button off
+    self.values['x'] = 1
     
-    local offButtonGroup = diffusionButtons.children["diffusionButton.off"]
-    local offButton = offButtonGroup.children["diffusion.button.off"]
-    
-    local cascadeButtonGroup = diffusionButtons.children["diffusionButton.cascade"]
-    local cascadeButton = cascadeButtonGroup.children["diffusion.button.cascade"]
-    
-    local reelsButtonGroup = diffusionButtons.children["diffusionButton.reels"]
-    local reelsButton = reelsButtonGroup.children["diffusion.button.reels"]
-    
-    local spaceButtonGroup = diffusionButtons.children["diffusionButton.space"]
-    local spaceButton = spaceButtonGroup.children["diffusion.button.space"]
-    
-    local collageButtonGroup = diffusionButtons.children["diffusionButton.collage"]
-    local collageButton = collageButtonGroup.children["diffusion.button.collage"]
-
-    local reverseButtonGroup = diffusionButtons.children["diffusionButton.reverse"]
-    local reverseButton = reverseButtonGroup.children["diffusion.button.reverse"]
-
-    sendMIDI({ MIDIMessageType.CONTROLCHANGE, 18, 66 })
-    
-    offButton.values['x'] = 0
-    cascadeButton.values['x'] = 0
-    reelsButton.values['x'] = 0
-    spaceButton.values['x'] = 0
-    collageButton.values['x'] = 1
-    reverseButton.values['x'] = 0    
+    -- notify button group of change
+    root:findByName("diffusionButtons"):notify("switchSelect", 4)
   end
 end]]></value>
 </property>
@@ -15059,43 +14830,17 @@ end]]></value>
 <property type='s'>
 <key><![CDATA[script]]></key>
 <value><![CDATA[function init()
-    local diffusionButtons = root.children["diffusionButtons"]
-    local reverseButtonGroup = diffusionButtons.children["diffusionButton.reverse"]
-    local reverseButton = reverseButtonGroup.children["diffusion.button.reverse"]
-
-    reverseButton.values['x'] = 0
+  -- button defaults to OFF
+  self.values['x'] = 0
 end
 
 function onValueChanged(val) 
-  if (val == "touch") then
-    local diffusionButtons = root.children["diffusionButtons"]
+  if (val == "touch" and self.values.x == 1) then
+    -- prevent turning button off
+    self.values['x'] = 1
     
-    local offButtonGroup = diffusionButtons.children["diffusionButton.off"]
-    local offButton = offButtonGroup.children["diffusion.button.off"]
-    
-    local cascadeButtonGroup = diffusionButtons.children["diffusionButton.cascade"]
-    local cascadeButton = cascadeButtonGroup.children["diffusion.button.cascade"]
-    
-    local reelsButtonGroup = diffusionButtons.children["diffusionButton.reels"]
-    local reelsButton = reelsButtonGroup.children["diffusion.button.reels"]
-    
-    local spaceButtonGroup = diffusionButtons.children["diffusionButton.space"]
-    local spaceButton = spaceButtonGroup.children["diffusion.button.space"]
-    
-    local collageButtonGroup = diffusionButtons.children["diffusionButton.collage"]
-    local collageButton = collageButtonGroup.children["diffusion.button.collage"]
-
-    local reverseButtonGroup = diffusionButtons.children["diffusionButton.reverse"]
-    local reverseButton = reverseButtonGroup.children["diffusion.button.reverse"]
-
-    sendMIDI({ MIDIMessageType.CONTROLCHANGE, 18, 88 })
-    
-    offButton.values['x'] = 0
-    cascadeButton.values['x'] = 0
-    reelsButton.values['x'] = 0
-    spaceButton.values['x'] = 0
-    collageButton.values['x'] = 0
-    reverseButton.values['x'] = 1    
+    -- notify button group of change
+    root:findByName("diffusionButtons"):notify("switchSelect", 5)
   end
 end]]></value>
 </property>
@@ -15312,6 +15057,80 @@ end]]></value>
 <key><![CDATA[pointerPriority]]></key>
 <value>0</value>
 </property>
+<property type='s'>
+<key><![CDATA[script]]></key>
+<value><![CDATA[function setButtons(active)
+  -- button 0.  Off
+  if (active ~= 0) then 
+    bVal = 0
+  else
+    bVal = 1
+  end
+  
+  self:findByName("texture.button.off", true).values['x'] = bVal
+  
+  -- button 1. Filter
+  if (active ~= 1) then
+    bVal = 0
+  else
+    bVal = 1
+  end
+  
+  self:findByName("texture.button.filter", true).values['x'] = bVal
+  
+  -- button 2. Squash
+  if (active ~= 2) then
+    bVal = 0
+  else
+    bVal = 1
+  end
+  
+  self:findByName("texture.button.squash", true).values['x'] = bVal
+  
+  -- button 3.  Cassette
+  if (active ~= 3) then
+    bVal = 0
+  else
+    bVal = 1
+  end
+  
+  self:findByName("texture.button.cassette", true).values['x'] = bVal
+  
+  -- button 4.  Broken
+  if (active ~= 4) then
+    bVal = 0
+  else
+    bVal = 1
+  end
+  
+  self:findByName("texture.button.broken", true).values['x'] = bVal
+  
+  -- button 5.  Interference
+  if (active ~= 5) then
+    bVal = 0
+  else
+    bVal = 1
+  end
+  
+  self:findByName("texture.button.interference", true).values['x'] = bVal
+end
+
+function onReceiveNotify(msg, val)
+  if (msg == "switchSelect") then
+    -- set all buttons
+    setButtons(val)
+    
+    -- send midi
+    if (val == 0) then
+      midiVal = 127
+    else  
+      midiVal = (val - 1) * 22
+    end
+    
+    sendMIDI({ MIDIMessageType.CONTROLCHANGE, 19, midiVal })
+  end
+end]]></value>
+</property>
 <property type='i'>
 <key><![CDATA[shape]]></key>
 <value>1</value>
@@ -15485,44 +15304,17 @@ end]]></value>
 <property type='s'>
 <key><![CDATA[script]]></key>
 <value><![CDATA[function init()
-    local textureButtons = root.children["textureButtons"]
-    local offButtonGroup = textureButtons.children["textureButton.off"]
-    local offButton = offButtonGroup.children["texture.button.off"]
-
-    offButton.values['x'] = 1
-    sendMIDI({ MIDIMessageType.CONTROLCHANGE, 19, 127 })
+  -- off button defaults to ON
+  root:findByName("textureButtons"):notify("switchSelect", 0)
 end
 
 function onValueChanged(val) 
-  if (val == "touch") then
-    local textureButtons = root.children["textureButtons"]
+  if (val == "touch" and self.values.x == 1) then
+    -- prevent turning button off
+    self.values['x'] = 1
     
-    local offButtonGroup = textureButtons.children["textureButton.off"]
-    local offButton = offButtonGroup.children["texture.button.off"]
-    
-    local filterButtonGroup = textureButtons.children["textureButton.filter"]
-    local filterButton = filterButtonGroup.children["texture.button.filter"]
-    
-    local squashButtonGroup = textureButtons.children["textureButton.squash"]
-    local squashButton = squashButtonGroup.children["texture.button.squash"]
-    
-    local cassetteButtonGroup = textureButtons.children["textureButton.cassette"]
-    local cassetteButton = cassetteButtonGroup.children["texture.button.cassette"]
-    
-    local brokenButtonGroup = textureButtons.children["textureButton.broken"]
-    local brokenButton = brokenButtonGroup.children["texture.button.broken"]
-
-    local interferenceButtonGroup = textureButtons.children["textureButton.interference"]
-    local interferenceButton = interferenceButtonGroup.children["texture.button.interference"]
-
-    sendMIDI({ MIDIMessageType.CONTROLCHANGE, 19, 127 })
-    
-    offButton.values['x'] = 1
-    filterButton.values['x'] = 0
-    squashButton.values['x'] = 0
-    cassetteButton.values['x'] = 0
-    brokenButton.values['x'] = 0
-    interferenceButton.values['x'] = 0    
+    -- notify button group of change
+    root:findByName("textureButtons"):notify("switchSelect", 0)
   end
 end]]></value>
 </property>
@@ -15831,43 +15623,17 @@ end]]></value>
 <property type='s'>
 <key><![CDATA[script]]></key>
 <value><![CDATA[function init()
-    local textureButtons = root.children["textureButtons"]
-    local filterButtonGroup = textureButtons.children["textureButton.filter"]
-    local filterButton = filterButtonGroup.children["texture.button.filter"]
-
-    filterButton.values['x'] = 0
+  -- button defaults to OFF
+  self.values['x'] = 0
 end
 
 function onValueChanged(val) 
-  if (val == "touch") then
-    local textureButtons = root.children["textureButtons"]
+  if (val == "touch" and self.values.x == 1) then
+    -- prevent turning button off
+    self.values['x'] = 1
     
-    local offButtonGroup = textureButtons.children["textureButton.off"]
-    local offButton = offButtonGroup.children["texture.button.off"]
-    
-    local filterButtonGroup = textureButtons.children["textureButton.filter"]
-    local filterButton = filterButtonGroup.children["texture.button.filter"]
-    
-    local squashButtonGroup = textureButtons.children["textureButton.squash"]
-    local squashButton = squashButtonGroup.children["texture.button.squash"]
-    
-    local cassetteButtonGroup = textureButtons.children["textureButton.cassette"]
-    local cassetteButton = cassetteButtonGroup.children["texture.button.cassette"]
-    
-    local brokenButtonGroup = textureButtons.children["textureButton.broken"]
-    local brokenButton = brokenButtonGroup.children["texture.button.broken"]
-
-    local interferenceButtonGroup = textureButtons.children["textureButton.interference"]
-    local interferenceButton = interferenceButtonGroup.children["texture.button.interference"]
-
-    sendMIDI({ MIDIMessageType.CONTROLCHANGE, 19, 0 })
-    
-    offButton.values['x'] = 0
-    filterButton.values['x'] = 1
-    squashButton.values['x'] = 0
-    cassetteButton.values['x'] = 0
-    brokenButton.values['x'] = 0
-    interferenceButton.values['x'] = 0    
+    -- notify button group of change
+    root:findByName("textureButtons"):notify("switchSelect", 1)
   end
 end]]></value>
 </property>
@@ -16176,43 +15942,17 @@ end]]></value>
 <property type='s'>
 <key><![CDATA[script]]></key>
 <value><![CDATA[function init()
-    local textureButtons = root.children["textureButtons"]
-    local squashButtonGroup = textureButtons.children["textureButton.squash"]
-    local squashButton = squashButtonGroup.children["texture.button.squash"]
-
-    squashButton.values['x'] = 0
+  -- button defaults to OFF
+  self.values['x'] = 0
 end
 
 function onValueChanged(val) 
-  if (val == "touch") then
-    local textureButtons = root.children["textureButtons"]
+  if (val == "touch" and self.values.x == 1) then
+    -- prevent turning button off
+    self.values['x'] = 1
     
-    local offButtonGroup = textureButtons.children["textureButton.off"]
-    local offButton = offButtonGroup.children["texture.button.off"]
-    
-    local filterButtonGroup = textureButtons.children["textureButton.filter"]
-    local filterButton = filterButtonGroup.children["texture.button.filter"]
-    
-    local squashButtonGroup = textureButtons.children["textureButton.squash"]
-    local squashButton = squashButtonGroup.children["texture.button.squash"]
-    
-    local cassetteButtonGroup = textureButtons.children["textureButton.cassette"]
-    local cassetteButton = cassetteButtonGroup.children["texture.button.cassette"]
-    
-    local brokenButtonGroup = textureButtons.children["textureButton.broken"]
-    local brokenButton = brokenButtonGroup.children["texture.button.broken"]
-
-    local interferenceButtonGroup = textureButtons.children["textureButton.interference"]
-    local interferenceButton = interferenceButtonGroup.children["texture.button.interference"]
-
-    sendMIDI({ MIDIMessageType.CONTROLCHANGE, 19, 22 })
-    
-    offButton.values['x'] = 0
-    filterButton.values['x'] = 0
-    squashButton.values['x'] = 1
-    cassetteButton.values['x'] = 0
-    brokenButton.values['x'] = 0
-    interferenceButton.values['x'] = 0    
+    -- notify button group of change
+    root:findByName("textureButtons"):notify("switchSelect", 2)
   end
 end]]></value>
 </property>
@@ -16521,43 +16261,17 @@ end]]></value>
 <property type='s'>
 <key><![CDATA[script]]></key>
 <value><![CDATA[function init()
-    local textureButtons = root.children["textureButtons"]
-    local cassetteButtonGroup = textureButtons.children["textureButton.cassette"]
-    local cassetteButton = cassetteButtonGroup.children["texture.button.cassette"]
-
-    cassetteButton.values['x'] = 0
+  -- button defaults to OFF
+  self.values['x'] = 0
 end
 
 function onValueChanged(val) 
-  if (val == "touch") then
-    local textureButtons = root.children["textureButtons"]
+  if (val == "touch" and self.values.x == 1) then
+    -- prevent turning button off
+    self.values['x'] = 1
     
-    local offButtonGroup = textureButtons.children["textureButton.off"]
-    local offButton = offButtonGroup.children["texture.button.off"]
-    
-    local filterButtonGroup = textureButtons.children["textureButton.filter"]
-    local filterButton = filterButtonGroup.children["texture.button.filter"]
-    
-    local squashButtonGroup = textureButtons.children["textureButton.squash"]
-    local squashButton = squashButtonGroup.children["texture.button.squash"]
-    
-    local cassetteButtonGroup = textureButtons.children["textureButton.cassette"]
-    local cassetteButton = cassetteButtonGroup.children["texture.button.cassette"]
-    
-    local brokenButtonGroup = textureButtons.children["textureButton.broken"]
-    local brokenButton = brokenButtonGroup.children["texture.button.broken"]
-
-    local interferenceButtonGroup = textureButtons.children["textureButton.interference"]
-    local interferenceButton = interferenceButtonGroup.children["texture.button.interference"]
-
-    sendMIDI({ MIDIMessageType.CONTROLCHANGE, 19, 44 })
-    
-    offButton.values['x'] = 0
-    filterButton.values['x'] = 0
-    squashButton.values['x'] = 0
-    cassetteButton.values['x'] = 1
-    brokenButton.values['x'] = 0
-    interferenceButton.values['x'] = 0    
+    -- notify button group of change
+    root:findByName("textureButtons"):notify("switchSelect", 3)
   end
 end]]></value>
 </property>
@@ -16866,43 +16580,17 @@ end]]></value>
 <property type='s'>
 <key><![CDATA[script]]></key>
 <value><![CDATA[function init()
-    local textureButtons = root.children["textureButtons"]
-    local brokenButtonGroup = textureButtons.children["textureButton.broken"]
-    local brokenButton = brokenButtonGroup.children["texture.button.broken"]
-
-    brokenButton.values['x'] = 0
+  -- button defaults to OFF
+  self.values['x'] = 0
 end
 
 function onValueChanged(val) 
-  if (val == "touch") then
-    local textureButtons = root.children["textureButtons"]
+  if (val == "touch" and self.values.x == 1) then
+    -- prevent turning button off
+    self.values['x'] = 1
     
-    local offButtonGroup = textureButtons.children["textureButton.off"]
-    local offButton = offButtonGroup.children["texture.button.off"]
-    
-    local filterButtonGroup = textureButtons.children["textureButton.filter"]
-    local filterButton = filterButtonGroup.children["texture.button.filter"]
-    
-    local squashButtonGroup = textureButtons.children["textureButton.squash"]
-    local squashButton = squashButtonGroup.children["texture.button.squash"]
-    
-    local cassetteButtonGroup = textureButtons.children["textureButton.cassette"]
-    local cassetteButton = cassetteButtonGroup.children["texture.button.cassette"]
-    
-    local brokenButtonGroup = textureButtons.children["textureButton.broken"]
-    local brokenButton = brokenButtonGroup.children["texture.button.broken"]
-
-    local interferenceButtonGroup = textureButtons.children["textureButton.interference"]
-    local interferenceButton = interferenceButtonGroup.children["texture.button.interference"]
-
-    sendMIDI({ MIDIMessageType.CONTROLCHANGE, 19, 66 })
-    
-    offButton.values['x'] = 0
-    filterButton.values['x'] = 0
-    squashButton.values['x'] = 0
-    cassetteButton.values['x'] = 0
-    brokenButton.values['x'] = 1
-    interferenceButton.values['x'] = 0    
+    -- notify button group of change
+    root:findByName("textureButtons"):notify("switchSelect", 4)
   end
 end]]></value>
 </property>
@@ -17211,43 +16899,17 @@ end]]></value>
 <property type='s'>
 <key><![CDATA[script]]></key>
 <value><![CDATA[function init()
-    local textureButtons = root.children["textureButtons"]
-    local interferenceButtonGroup = textureButtons.children["textureButton.interference"]
-    local interferenceButton = interferenceButtonGroup.children["texture.button.interference"]
-
-    interferenceButton.values['x'] = 0
+  -- button defaults to OFF
+  self.values['x'] = 0
 end
 
 function onValueChanged(val) 
-  if (val == "touch") then
-    local textureButtons = root.children["textureButtons"]
+  if (val == "touch" and self.values.x == 1) then
+    -- prevent turning button off
+    self.values['x'] = 1
     
-    local offButtonGroup = textureButtons.children["textureButton.off"]
-    local offButton = offButtonGroup.children["texture.button.off"]
-    
-    local filterButtonGroup = textureButtons.children["textureButton.filter"]
-    local filterButton = filterButtonGroup.children["texture.button.filter"]
-    
-    local squashButtonGroup = textureButtons.children["textureButton.squash"]
-    local squashButton = squashButtonGroup.children["texture.button.squash"]
-    
-    local cassetteButtonGroup = textureButtons.children["textureButton.cassette"]
-    local cassetteButton = cassetteButtonGroup.children["texture.button.cassette"]
-    
-    local brokenButtonGroup = textureButtons.children["textureButton.broken"]
-    local brokenButton = brokenButtonGroup.children["texture.button.broken"]
-
-    local interferenceButtonGroup = textureButtons.children["textureButton.interference"]
-    local interferenceButton = interferenceButtonGroup.children["texture.button.interference"]
-
-    sendMIDI({ MIDIMessageType.CONTROLCHANGE, 19, 88 })
-    
-    offButton.values['x'] = 0
-    filterButton.values['x'] = 0
-    squashButton.values['x'] = 0
-    cassetteButton.values['x'] = 0
-    brokenButton.values['x'] = 0
-    interferenceButton.values['x'] = 1    
+    -- notify button group of change
+    root:findByName("textureButtons"):notify("switchSelect", 5)
   end
 end]]></value>
 </property>
@@ -18508,317 +18170,10 @@ function onValueChanged(val)
     root:notify("randomAllDials")
 
     -- now do the effect selection 
-    local characterButtons = root.children["characterButtons"]
-      
-    local offButtonGroup = characterButtons.children["characterButton.off"]
-    local offButton = offButtonGroup.children["character.button.off"]
-      
-    local driveButtonGroup = characterButtons.children["characterButton.drive"]
-    local driveButton = driveButtonGroup.children["character.button.drive"]
-      
-    local sweetenButtonGroup = characterButtons.children["characterButton.sweeten"]
-    local sweetenButton = sweetenButtonGroup.children["character.button.sweeten"]
-      
-    local fuzzButtonGroup = characterButtons.children["characterButton.fuzz"]
-    local fuzzButton = fuzzButtonGroup.children["character.button.fuzz"]
-      
-    local howlButtonGroup = characterButtons.children["characterButton.howl"]
-    local howlButton = howlButtonGroup.children["character.button.howl"]
-  
-    local swellButtonGroup = characterButtons.children["characterButton.swell"]
-    local swellButton = swellButtonGroup.children["character.button.swell"]
-
-    local characterRand = math.random(0, 5)
-
-    if (characterRand == 0) then      
-      offButton.values['x'] = 1
-      driveButton.values['x'] = 0
-      sweetenButton.values['x'] = 0
-      fuzzButton.values['x'] = 0
-      howlButton.values['x'] = 0
-      swellButton.values['x'] = 0  
-      
-      sendMIDI({ MIDIMessageType.CONTROLCHANGE, 16, 127 })
-    elseif (characterRand == 1) then
-      offButton.values['x'] = 0
-      driveButton.values['x'] = 1
-      sweetenButton.values['x'] = 0
-      fuzzButton.values['x'] = 0
-      howlButton.values['x'] = 0
-      swellButton.values['x'] = 0    
-      
-      sendMIDI({ MIDIMessageType.CONTROLCHANGE, 16, 0 })
-    elseif (characterRand == 2) then
-      offButton.values['x'] = 0
-      driveButton.values['x'] = 0
-      sweetenButton.values['x'] = 1
-      fuzzButton.values['x'] = 0
-      howlButton.values['x'] = 0
-      swellButton.values['x'] = 0    
-      
-      sendMIDI({ MIDIMessageType.CONTROLCHANGE, 16, 22 })
-    elseif (characterRand == 3) then
-      offButton.values['x'] = 0
-      driveButton.values['x'] = 0
-      sweetenButton.values['x'] = 0
-      fuzzButton.values['x'] = 1
-      howlButton.values['x'] = 0
-      swellButton.values['x'] = 0    
-      
-      sendMIDI({ MIDIMessageType.CONTROLCHANGE, 16, 44 })  
-    elseif (characterRand == 4) then
-      offButton.values['x'] = 0
-      driveButton.values['x'] = 0
-      sweetenButton.values['x'] = 0
-      fuzzButton.values['x'] = 0
-      howlButton.values['x'] = 1
-      swellButton.values['x'] = 0    
-      
-      sendMIDI({ MIDIMessageType.CONTROLCHANGE, 16, 66 })
-    elseif (characterRand == 5) then
-      offButton.values['x'] = 0
-      driveButton.values['x'] = 0
-      sweetenButton.values['x'] = 0
-      fuzzButton.values['x'] = 0
-      howlButton.values['x'] = 0
-      swellButton.values['x'] = 1    
-      
-      sendMIDI({ MIDIMessageType.CONTROLCHANGE, 16, 88 })
-    end
-    
-    local movementButtons = root.children["movementButtons"]
-    
-    local offButtonGroup = movementButtons.children["movementButton.off"]
-    local offButton = offButtonGroup.children["movement.button.off"]
-    
-    local doublerButtonGroup = movementButtons.children["movementButton.doubler"]
-    local doublerButton = doublerButtonGroup.children["movement.button.doubler"]
-    
-    local vibratoButtonGroup = movementButtons.children["movementButton.vibrato"]
-    local vibratoButton = vibratoButtonGroup.children["movement.button.vibrato"]
-    
-    local phaserButtonGroup = movementButtons.children["movementButton.phaser"]
-    local phaserButton = phaserButtonGroup.children["movement.button.phaser"]
-    
-    local tremoloButtonGroup = movementButtons.children["movementButton.tremolo"]
-    local tremoloButton = tremoloButtonGroup.children["movement.button.tremolo"]
-
-    local pitchButtonGroup = movementButtons.children["movementButton.pitch"]
-    local pitchButton = pitchButtonGroup.children["movement.button.pitch"]
-
-    local movementRand = math.random(0, 5)
-    
-    if (movementRand == 0) then
-      offButton.values['x'] = 1
-      doublerButton.values['x'] = 0
-      vibratoButton.values['x'] = 0
-      phaserButton.values['x'] = 0
-      tremoloButton.values['x'] = 0
-      pitchButton.values['x'] = 0
-      
-      sendMIDI({ MIDIMessageType.CONTROLCHANGE, 17, 127 }) 
-    elseif (movementRand == 1) then
-      offButton.values['x'] = 0
-      doublerButton.values['x'] = 1
-      vibratoButton.values['x'] = 0
-      phaserButton.values['x'] = 0
-      tremoloButton.values['x'] = 0
-      pitchButton.values['x'] = 0
-      
-      sendMIDI({ MIDIMessageType.CONTROLCHANGE, 17, 0 })
-    elseif (movementRand == 2) then
-      offButton.values['x'] = 0
-      doublerButton.values['x'] = 0
-      vibratoButton.values['x'] = 1
-      phaserButton.values['x'] = 0
-      tremoloButton.values['x'] = 0
-      pitchButton.values['x'] = 0
-      
-      sendMIDI({ MIDIMessageType.CONTROLCHANGE, 17, 22 })
-    elseif (movementRand == 3) then
-      offButton.values['x'] = 0
-      doublerButton.values['x'] = 0
-      vibratoButton.values['x'] = 0
-      phaserButton.values['x'] = 1
-      tremoloButton.values['x'] = 0
-      pitchButton.values['x'] = 0
-      
-      sendMIDI({ MIDIMessageType.CONTROLCHANGE, 17, 44 })
-    elseif (movementRand == 4) then
-      offButton.values['x'] = 0
-      doublerButton.values['x'] = 0
-      vibratoButton.values['x'] = 0
-      phaserButton.values['x'] = 0
-      tremoloButton.values['x'] = 1
-      pitchButton.values['x'] = 0
-      
-      sendMIDI({ MIDIMessageType.CONTROLCHANGE, 17, 66 })
-    elseif (movementRand == 5) then
-      offButton.values['x'] = 0
-      doublerButton.values['x'] = 0
-      vibratoButton.values['x'] = 0
-      phaserButton.values['x'] = 0
-      tremoloButton.values['x'] = 0
-      pitchButton.values['x'] = 1
-      
-      sendMIDI({ MIDIMessageType.CONTROLCHANGE, 17, 88 })
-    end
-  
-    local diffusionButtons = root.children["diffusionButtons"]
-    
-    local offButtonGroup = diffusionButtons.children["diffusionButton.off"]
-    local offButton = offButtonGroup.children["diffusion.button.off"]
-    
-    local cascadeButtonGroup = diffusionButtons.children["diffusionButton.cascade"]
-    local cascadeButton = cascadeButtonGroup.children["diffusion.button.cascade"]
-    
-    local reelsButtonGroup = diffusionButtons.children["diffusionButton.reels"]
-    local reelsButton = reelsButtonGroup.children["diffusion.button.reels"]
-    
-    local spaceButtonGroup = diffusionButtons.children["diffusionButton.space"]
-    local spaceButton = spaceButtonGroup.children["diffusion.button.space"]
-    
-    local collageButtonGroup = diffusionButtons.children["diffusionButton.collage"]
-    local collageButton = collageButtonGroup.children["diffusion.button.collage"]
-
-    local reverseButtonGroup = diffusionButtons.children["diffusionButton.reverse"]
-    local reverseButton = reverseButtonGroup.children["diffusion.button.reverse"]
-
-    local diffusionRand = math.random(0, 5)
-    
-    if (diffusionRand == 0) then
-      offButton.values['x'] = 1
-      cascadeButton.values['x'] = 0
-      reelsButton.values['x'] = 0
-      spaceButton.values['x'] = 0
-      collageButton.values['x'] = 0
-      reverseButton.values['x'] = 0
-      
-      sendMIDI({ MIDIMessageType.CONTROLCHANGE, 18, 127 })
-    elseif (diffusionRand == 1) then
-      offButton.values['x'] = 0
-      cascadeButton.values['x'] = 1
-      reelsButton.values['x'] = 0
-      spaceButton.values['x'] = 0
-      collageButton.values['x'] = 0
-      reverseButton.values['x'] = 0    
-      
-      sendMIDI({ MIDIMessageType.CONTROLCHANGE, 18, 0 })
-    elseif (diffusionRand == 2) then
-      offButton.values['x'] = 0
-      cascadeButton.values['x'] = 0
-      reelsButton.values['x'] = 1
-      spaceButton.values['x'] = 0
-      collageButton.values['x'] = 0
-      reverseButton.values['x'] = 0    
-      
-      sendMIDI({ MIDIMessageType.CONTROLCHANGE, 18, 22 })
-    elseif (diffusionRand == 3) then
-      offButton.values['x'] = 0
-      cascadeButton.values['x'] = 0
-      reelsButton.values['x'] = 0
-      spaceButton.values['x'] = 1
-      collageButton.values['x'] = 0
-      reverseButton.values['x'] = 0    
-      
-      sendMIDI({ MIDIMessageType.CONTROLCHANGE, 18, 44 })
-    elseif (diffusionRand == 4) then
-      offButton.values['x'] = 0
-      cascadeButton.values['x'] = 0
-      reelsButton.values['x'] = 0
-      spaceButton.values['x'] = 0
-      collageButton.values['x'] = 1
-      reverseButton.values['x'] = 0        
-      
-      sendMIDI({ MIDIMessageType.CONTROLCHANGE, 18, 66 })
-    elseif (diffusionRand == 5) then
-      offButton.values['x'] = 0
-      cascadeButton.values['x'] = 0
-      reelsButton.values['x'] = 0
-      spaceButton.values['x'] = 0
-      collageButton.values['x'] = 0
-      reverseButton.values['x'] = 1    
-      
-      sendMIDI({ MIDIMessageType.CONTROLCHANGE, 18, 88 })
-    end
-    
-    local textureButtons = root.children["textureButtons"]
-    
-    local offButtonGroup = textureButtons.children["textureButton.off"]
-    local offButton = offButtonGroup.children["texture.button.off"]
-    
-    local filterButtonGroup = textureButtons.children["textureButton.filter"]
-    local filterButton = filterButtonGroup.children["texture.button.filter"]
-    
-    local squashButtonGroup = textureButtons.children["textureButton.squash"]
-    local squashButton = squashButtonGroup.children["texture.button.squash"]
-    
-    local cassetteButtonGroup = textureButtons.children["textureButton.cassette"]
-    local cassetteButton = cassetteButtonGroup.children["texture.button.cassette"]
-    
-    local brokenButtonGroup = textureButtons.children["textureButton.broken"]
-    local brokenButton = brokenButtonGroup.children["texture.button.broken"]
-
-    local interferenceButtonGroup = textureButtons.children["textureButton.interference"]
-    local interferenceButton = interferenceButtonGroup.children["texture.button.interference"]
-
-    local textureRand = math.random(0, 5)
-    
-    if (textureRand == 0) then
-      offButton.values['x'] = 1
-      filterButton.values['x'] = 0
-      squashButton.values['x'] = 0
-      cassetteButton.values['x'] = 0
-      brokenButton.values['x'] = 0
-      interferenceButton.values['x'] = 0
-      
-      sendMIDI({ MIDIMessageType.CONTROLCHANGE, 19, 127 })
-    elseif (textureRand == 1) then
-      offButton.values['x'] = 0
-      filterButton.values['x'] = 1
-      squashButton.values['x'] = 0
-      cassetteButton.values['x'] = 0
-      brokenButton.values['x'] = 0
-      interferenceButton.values['x'] = 0
-      
-      sendMIDI({ MIDIMessageType.CONTROLCHANGE, 19, 0 })
-    elseif (textureRand == 2) then
-      offButton.values['x'] = 0
-      filterButton.values['x'] = 0
-      squashButton.values['x'] = 1
-      cassetteButton.values['x'] = 0
-      brokenButton.values['x'] = 0
-      interferenceButton.values['x'] = 0
-      
-      sendMIDI({ MIDIMessageType.CONTROLCHANGE, 19, 22 })
-    elseif (textureRand == 3) then
-      offButton.values['x'] = 0
-      filterButton.values['x'] = 0
-      squashButton.values['x'] = 0
-      cassetteButton.values['x'] = 1
-      brokenButton.values['x'] = 0
-      interferenceButton.values['x'] = 0
-      
-      sendMIDI({ MIDIMessageType.CONTROLCHANGE, 19, 44 })
-    elseif (textureRand == 4) then
-      offButton.values['x'] = 0
-      filterButton.values['x'] = 0
-      squashButton.values['x'] = 0
-      cassetteButton.values['x'] = 0
-      brokenButton.values['x'] = 1
-      interferenceButton.values['x'] = 0
-      
-      sendMIDI({ MIDIMessageType.CONTROLCHANGE, 19, 66 })
-    elseif (textureRand == 5) then
-      offButton.values['x'] = 0
-      filterButton.values['x'] = 0
-      squashButton.values['x'] = 0
-      cassetteButton.values['x'] = 0
-      brokenButton.values['x'] = 0
-      interferenceButton.values['x'] = 1
-      
-      sendMIDI({ MIDIMessageType.CONTROLCHANGE, 16, 88 })
-    end
+    root:findByName("characterButtons", true):notify("switchSelect", math.random(0, 5))
+    root:findByName("movementButtons", true):notify("switchSelect", math.random(0, 5))
+    root:findByName("diffusionButtons", true):notify("switchSelect", math.random(0, 5))
+    root:findByName("textureButtons", true):notify("switchSelect", math.random(0, 5))
   end
 end]]></value>
 </property>
