@@ -67,43 +67,28 @@ https://github.com/fdask/touchOSC]]></value>
 </property>
 <property type='s'>
 <key><![CDATA[script]]></key>
-<value><![CDATA[function onReceiveNotify(key, value)
+<value><![CDATA[function setDialsTo(dial)
+  self:findByName("character.tilt.radial", true).values['x'] = dial or math.random()
+  self:findByName("character.sensitivity.radial", true).values['x'] = dial or math.random()
+  self:findByName("character.amount.radial", true).values['x'] = dial or math.random()
+  self:findByName("character.effectVol.radial", true).values['x'] = dial or math.random()
+  self:findByName("movement.rate.radial", true).values['x'] = dial or math.random()
+  self:findByName("movement.drift.radial", true).values['x'] = dial or math.random()
+  self:findByName("movement.amount.radial", true).values['x'] = dial or math.random()
+  self:findByName("movement.effectVol.radial", true).values['x'] = dial or math.random()
+  self:findByName("diffusion.time.radial", true).values['x'] = dial or math.random()
+  self:findByName("diffusion.drift.radial", true).values['x'] = dial or math.random()
+  self:findByName("diffusion.amount.radial", true).values['x'] = dial or math.random()
+  self:findByName("diffusion.effectVol.radial", true).values['x'] = dial or math.random()
+  self:findByName("texture.amount.radial", true).values['x'] = dial or math.random()
+  self:findByName("texture.effectVol.radial", true).values['x'] = dial or math.random()
+end
+
+function onReceiveNotify(key, value)
   if (key == "setAllDials") then
-    self:findByName("character.tilt.radial", true).values['x'] = value
-    self:findByName("character.sensitivity.radial", true).values['x'] = value
-    self:findByName("character.amount.radial", true).values['x'] = value
-    self:findByName("character.effectVol.radial", true).values['x'] = value
-    
-    self:findByName("movement.rate.radial", true).values['x'] = value
-    self:findByName("movement.drift.radial", true).values['x'] = value
-    self:findByName("movement.amount.radial", true).values['x'] = value
-    self:findByName("movement.effectVol.radial", true).values['x'] = value
-    
-    self:findByName("diffusion.time.radial", true).values['x'] = value
-    self:findByName("diffusion.drift.radial", true).values['x'] = value
-    self:findByName("diffusion.amount.radial", true).values['x'] = value
-    self:findByName("diffusion.effectVol.radial", true).values['x'] = value
-    
-    self:findByName("texture.amount.radial", true).values['x'] = value
-    self:findByName("texture.effectVol.radial", true).values['x'] = value
+    setDialsTo(value)
   elseif (key == "randomAllDials") then
-    self:findByName("character.tilt.radial", true).values['x'] = math.random()
-    self:findByName("character.sensitivity.radial", true).values['x'] = math.random()
-    self:findByName("character.amount.radial", true).values['x'] = math.random()
-    self:findByName("character.effectVol.radial", true).values['x'] = math.random()
-    
-    self:findByName("movement.rate.radial", true).values['x'] = math.random()
-    self:findByName("movement.drift.radial", true).values['x'] = math.random()
-    self:findByName("movement.amount.radial", true).values['x'] = math.random()
-    self:findByName("movement.effectVol.radial", true).values['x'] = math.random()
-    
-    self:findByName("diffusion.time.radial", true).values['x'] = math.random()
-    self:findByName("diffusion.drift.radial", true).values['x'] = math.random()
-    self:findByName("diffusion.amount.radial", true).values['x'] = math.random()
-    self:findByName("diffusion.effectVol.radial", true).values['x'] = math.random()
-    
-    self:findByName("texture.amount.radial", true).values['x'] = math.random()
-    self:findByName("texture.effectVol.radial", true).values['x'] = math.random()
+    setDialsTo(false)
   end
 end]]></value>
 </property>
@@ -885,7 +870,7 @@ end]]></value>
 <key><![CDATA[text]]></key>
 <locked>0</locked>
 <lockedDefaultCurrent>1</lockedDefaultCurrent>
-<default><![CDATA[25]]></default>
+<default><![CDATA[27]]></default>
 <defaultPull>0</defaultPull>
 </value>
 <value>
@@ -1382,7 +1367,7 @@ end]]></value>
 <key><![CDATA[text]]></key>
 <locked>0</locked>
 <lockedDefaultCurrent>1</lockedDefaultCurrent>
-<default><![CDATA[34]]></default>
+<default><![CDATA[85]]></default>
 <defaultPull>0</defaultPull>
 </value>
 <value>
@@ -1879,7 +1864,7 @@ end]]></value>
 <key><![CDATA[text]]></key>
 <locked>0</locked>
 <lockedDefaultCurrent>1</lockedDefaultCurrent>
-<default><![CDATA[40]]></default>
+<default><![CDATA[109]]></default>
 <defaultPull>0</defaultPull>
 </value>
 <value>
@@ -2376,7 +2361,7 @@ end]]></value>
 <key><![CDATA[text]]></key>
 <locked>0</locked>
 <lockedDefaultCurrent>1</lockedDefaultCurrent>
-<default><![CDATA[121]]></default>
+<default><![CDATA[107]]></default>
 <defaultPull>0</defaultPull>
 </value>
 <value>
@@ -2954,7 +2939,7 @@ end]]></value>
 <key><![CDATA[text]]></key>
 <locked>0</locked>
 <lockedDefaultCurrent>1</lockedDefaultCurrent>
-<default><![CDATA[60]]></default>
+<default><![CDATA[2]]></default>
 <defaultPull>0</defaultPull>
 </value>
 <value>
@@ -3451,7 +3436,7 @@ end]]></value>
 <key><![CDATA[text]]></key>
 <locked>0</locked>
 <lockedDefaultCurrent>1</lockedDefaultCurrent>
-<default><![CDATA[92]]></default>
+<default><![CDATA[23]]></default>
 <defaultPull>0</defaultPull>
 </value>
 <value>
@@ -3948,7 +3933,7 @@ end]]></value>
 <key><![CDATA[text]]></key>
 <locked>0</locked>
 <lockedDefaultCurrent>1</lockedDefaultCurrent>
-<default><![CDATA[100]]></default>
+<default><![CDATA[120]]></default>
 <defaultPull>0</defaultPull>
 </value>
 <value>
@@ -4445,7 +4430,7 @@ end]]></value>
 <key><![CDATA[text]]></key>
 <locked>0</locked>
 <lockedDefaultCurrent>1</lockedDefaultCurrent>
-<default><![CDATA[124]]></default>
+<default><![CDATA[61]]></default>
 <defaultPull>0</defaultPull>
 </value>
 <value>
@@ -5023,7 +5008,7 @@ end]]></value>
 <key><![CDATA[text]]></key>
 <locked>0</locked>
 <lockedDefaultCurrent>1</lockedDefaultCurrent>
-<default><![CDATA[33]]></default>
+<default><![CDATA[5]]></default>
 <defaultPull>0</defaultPull>
 </value>
 <value>
@@ -5520,7 +5505,7 @@ end]]></value>
 <key><![CDATA[text]]></key>
 <locked>0</locked>
 <lockedDefaultCurrent>1</lockedDefaultCurrent>
-<default><![CDATA[49]]></default>
+<default><![CDATA[65]]></default>
 <defaultPull>0</defaultPull>
 </value>
 <value>
@@ -6017,7 +6002,7 @@ end]]></value>
 <key><![CDATA[text]]></key>
 <locked>0</locked>
 <lockedDefaultCurrent>1</lockedDefaultCurrent>
-<default><![CDATA[114]]></default>
+<default><![CDATA[24]]></default>
 <defaultPull>0</defaultPull>
 </value>
 <value>
@@ -6514,7 +6499,7 @@ end]]></value>
 <key><![CDATA[text]]></key>
 <locked>0</locked>
 <lockedDefaultCurrent>1</lockedDefaultCurrent>
-<default><![CDATA[90]]></default>
+<default><![CDATA[96]]></default>
 <defaultPull>0</defaultPull>
 </value>
 <value>
@@ -8167,7 +8152,7 @@ end]]></value>
 <key><![CDATA[text]]></key>
 <locked>0</locked>
 <lockedDefaultCurrent>1</lockedDefaultCurrent>
-<default><![CDATA[102]]></default>
+<default><![CDATA[10]]></default>
 <defaultPull>0</defaultPull>
 </value>
 <value>
@@ -8664,7 +8649,7 @@ end]]></value>
 <key><![CDATA[text]]></key>
 <locked>0</locked>
 <lockedDefaultCurrent>1</lockedDefaultCurrent>
-<default><![CDATA[103]]></default>
+<default><![CDATA[16]]></default>
 <defaultPull>0</defaultPull>
 </value>
 <value>
