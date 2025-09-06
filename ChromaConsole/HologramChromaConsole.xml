@@ -40,6 +40,15 @@
 <key><![CDATA[locked]]></key>
 <value>0</value>
 </property>
+<property type='s'>
+<key><![CDATA[metaComments]]></key>
+<value><![CDATA[For latest updates please check:
+https://github.com/fdask/touchOSC]]></value>
+</property>
+<property type='s'>
+<key><![CDATA[metaCreator]]></key>
+<value><![CDATA[James Wallace <sausages@gmail.com>]]></value>
+</property>
 <property type='i'>
 <key><![CDATA[orientation]]></key>
 <value>0</value>
@@ -876,7 +885,7 @@ end]]></value>
 <key><![CDATA[text]]></key>
 <locked>0</locked>
 <lockedDefaultCurrent>1</lockedDefaultCurrent>
-<default><![CDATA[9]]></default>
+<default><![CDATA[25]]></default>
 <defaultPull>0</defaultPull>
 </value>
 <value>
@@ -1373,7 +1382,7 @@ end]]></value>
 <key><![CDATA[text]]></key>
 <locked>0</locked>
 <lockedDefaultCurrent>1</lockedDefaultCurrent>
-<default><![CDATA[14]]></default>
+<default><![CDATA[34]]></default>
 <defaultPull>0</defaultPull>
 </value>
 <value>
@@ -1870,7 +1879,7 @@ end]]></value>
 <key><![CDATA[text]]></key>
 <locked>0</locked>
 <lockedDefaultCurrent>1</lockedDefaultCurrent>
-<default><![CDATA[37]]></default>
+<default><![CDATA[40]]></default>
 <defaultPull>0</defaultPull>
 </value>
 <value>
@@ -2367,7 +2376,7 @@ end]]></value>
 <key><![CDATA[text]]></key>
 <locked>0</locked>
 <lockedDefaultCurrent>1</lockedDefaultCurrent>
-<default><![CDATA[105]]></default>
+<default><![CDATA[121]]></default>
 <defaultPull>0</defaultPull>
 </value>
 <value>
@@ -2945,7 +2954,7 @@ end]]></value>
 <key><![CDATA[text]]></key>
 <locked>0</locked>
 <lockedDefaultCurrent>1</lockedDefaultCurrent>
-<default><![CDATA[67]]></default>
+<default><![CDATA[60]]></default>
 <defaultPull>0</defaultPull>
 </value>
 <value>
@@ -3442,7 +3451,7 @@ end]]></value>
 <key><![CDATA[text]]></key>
 <locked>0</locked>
 <lockedDefaultCurrent>1</lockedDefaultCurrent>
-<default><![CDATA[57]]></default>
+<default><![CDATA[92]]></default>
 <defaultPull>0</defaultPull>
 </value>
 <value>
@@ -3939,7 +3948,7 @@ end]]></value>
 <key><![CDATA[text]]></key>
 <locked>0</locked>
 <lockedDefaultCurrent>1</lockedDefaultCurrent>
-<default><![CDATA[38]]></default>
+<default><![CDATA[100]]></default>
 <defaultPull>0</defaultPull>
 </value>
 <value>
@@ -4436,7 +4445,7 @@ end]]></value>
 <key><![CDATA[text]]></key>
 <locked>0</locked>
 <lockedDefaultCurrent>1</lockedDefaultCurrent>
-<default><![CDATA[28]]></default>
+<default><![CDATA[124]]></default>
 <defaultPull>0</defaultPull>
 </value>
 <value>
@@ -5014,7 +5023,7 @@ end]]></value>
 <key><![CDATA[text]]></key>
 <locked>0</locked>
 <lockedDefaultCurrent>1</lockedDefaultCurrent>
-<default><![CDATA[76]]></default>
+<default><![CDATA[33]]></default>
 <defaultPull>0</defaultPull>
 </value>
 <value>
@@ -5511,7 +5520,7 @@ end]]></value>
 <key><![CDATA[text]]></key>
 <locked>0</locked>
 <lockedDefaultCurrent>1</lockedDefaultCurrent>
-<default><![CDATA[125]]></default>
+<default><![CDATA[49]]></default>
 <defaultPull>0</defaultPull>
 </value>
 <value>
@@ -6008,7 +6017,7 @@ end]]></value>
 <key><![CDATA[text]]></key>
 <locked>0</locked>
 <lockedDefaultCurrent>1</lockedDefaultCurrent>
-<default><![CDATA[116]]></default>
+<default><![CDATA[114]]></default>
 <defaultPull>0</defaultPull>
 </value>
 <value>
@@ -6505,7 +6514,7 @@ end]]></value>
 <key><![CDATA[text]]></key>
 <locked>0</locked>
 <lockedDefaultCurrent>1</lockedDefaultCurrent>
-<default><![CDATA[50]]></default>
+<default><![CDATA[90]]></default>
 <defaultPull>0</defaultPull>
 </value>
 <value>
@@ -8158,7 +8167,7 @@ end]]></value>
 <key><![CDATA[text]]></key>
 <locked>0</locked>
 <lockedDefaultCurrent>1</lockedDefaultCurrent>
-<default><![CDATA[1]]></default>
+<default><![CDATA[102]]></default>
 <defaultPull>0</defaultPull>
 </value>
 <value>
@@ -8655,7 +8664,7 @@ end]]></value>
 <key><![CDATA[text]]></key>
 <locked>0</locked>
 <lockedDefaultCurrent>1</lockedDefaultCurrent>
-<default><![CDATA[110]]></default>
+<default><![CDATA[103]]></default>
 <defaultPull>0</defaultPull>
 </value>
 <value>
