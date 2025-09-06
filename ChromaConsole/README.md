@@ -10,10 +10,13 @@ https://hexler.net/touchosc
 # Controls
 
 ## Buttons
-* MIN - minimizes all dials
-* MID - mids all dials
-* MAX - maxes all dials
-* rand() - randomizes everything but the mix/levels
+
+Work on all dials except Mix and Output Vol
+
+* MIN - minimizes dials
+* MID - mids dials
+* MAX - maxes dials
+* rand() - randomizes everything
 
 # Screens
 
