@@ -1,7 +1,12 @@
-TouchOSC controller for the Hologram Electronics Chroma Console.
+Midi control surface for the Hologram Electronics Chroma Console written in TouchOSC.
 
-Controls
---------
+# Hardware
+https://www.hologramelectronics.com/product-page/chroma-console
+
+# Software
+https://hexler.net/touchosc
+
+# Controls
 * Min - minimizes all dials
 * Mid - mids all dials
 * Max - maxes all dials
