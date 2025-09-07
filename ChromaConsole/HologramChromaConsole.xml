@@ -49,6 +49,10 @@ https://github.com/fdask/touchOSC]]></value>
 <key><![CDATA[metaCreator]]></key>
 <value><![CDATA[James Wallace <sausages@gmail.com>]]></value>
 </property>
+<property type='s'>
+<key><![CDATA[name]]></key>
+<value><![CDATA[group]]></value>
+</property>
 <property type='i'>
 <key><![CDATA[orientation]]></key>
 <value>0</value>
@@ -870,7 +874,7 @@ end]]></value>
 <key><![CDATA[text]]></key>
 <locked>0</locked>
 <lockedDefaultCurrent>1</lockedDefaultCurrent>
-<default><![CDATA[27]]></default>
+<default><![CDATA[58]]></default>
 <defaultPull>0</defaultPull>
 </value>
 <value>
@@ -1367,7 +1371,7 @@ end]]></value>
 <key><![CDATA[text]]></key>
 <locked>0</locked>
 <lockedDefaultCurrent>1</lockedDefaultCurrent>
-<default><![CDATA[85]]></default>
+<default><![CDATA[6]]></default>
 <defaultPull>0</defaultPull>
 </value>
 <value>
@@ -1864,7 +1868,7 @@ end]]></value>
 <key><![CDATA[text]]></key>
 <locked>0</locked>
 <lockedDefaultCurrent>1</lockedDefaultCurrent>
-<default><![CDATA[109]]></default>
+<default><![CDATA[45]]></default>
 <defaultPull>0</defaultPull>
 </value>
 <value>
@@ -2361,7 +2365,7 @@ end]]></value>
 <key><![CDATA[text]]></key>
 <locked>0</locked>
 <lockedDefaultCurrent>1</lockedDefaultCurrent>
-<default><![CDATA[107]]></default>
+<default><![CDATA[60]]></default>
 <defaultPull>0</defaultPull>
 </value>
 <value>
@@ -2939,7 +2943,7 @@ end]]></value>
 <key><![CDATA[text]]></key>
 <locked>0</locked>
 <lockedDefaultCurrent>1</lockedDefaultCurrent>
-<default><![CDATA[2]]></default>
+<default><![CDATA[93]]></default>
 <defaultPull>0</defaultPull>
 </value>
 <value>
@@ -3436,7 +3440,7 @@ end]]></value>
 <key><![CDATA[text]]></key>
 <locked>0</locked>
 <lockedDefaultCurrent>1</lockedDefaultCurrent>
-<default><![CDATA[23]]></default>
+<default><![CDATA[47]]></default>
 <defaultPull>0</defaultPull>
 </value>
 <value>
@@ -3933,7 +3937,7 @@ end]]></value>
 <key><![CDATA[text]]></key>
 <locked>0</locked>
 <lockedDefaultCurrent>1</lockedDefaultCurrent>
-<default><![CDATA[120]]></default>
+<default><![CDATA[114]]></default>
 <defaultPull>0</defaultPull>
 </value>
 <value>
@@ -4430,7 +4434,7 @@ end]]></value>
 <key><![CDATA[text]]></key>
 <locked>0</locked>
 <lockedDefaultCurrent>1</lockedDefaultCurrent>
-<default><![CDATA[61]]></default>
+<default><![CDATA[65]]></default>
 <defaultPull>0</defaultPull>
 </value>
 <value>
@@ -5008,7 +5012,7 @@ end]]></value>
 <key><![CDATA[text]]></key>
 <locked>0</locked>
 <lockedDefaultCurrent>1</lockedDefaultCurrent>
-<default><![CDATA[5]]></default>
+<default><![CDATA[121]]></default>
 <defaultPull>0</defaultPull>
 </value>
 <value>
@@ -5505,7 +5509,7 @@ end]]></value>
 <key><![CDATA[text]]></key>
 <locked>0</locked>
 <lockedDefaultCurrent>1</lockedDefaultCurrent>
-<default><![CDATA[65]]></default>
+<default><![CDATA[68]]></default>
 <defaultPull>0</defaultPull>
 </value>
 <value>
@@ -6002,7 +6006,7 @@ end]]></value>
 <key><![CDATA[text]]></key>
 <locked>0</locked>
 <lockedDefaultCurrent>1</lockedDefaultCurrent>
-<default><![CDATA[24]]></default>
+<default><![CDATA[49]]></default>
 <defaultPull>0</defaultPull>
 </value>
 <value>
@@ -6499,7 +6503,7 @@ end]]></value>
 <key><![CDATA[text]]></key>
 <locked>0</locked>
 <lockedDefaultCurrent>1</lockedDefaultCurrent>
-<default><![CDATA[96]]></default>
+<default><![CDATA[89]]></default>
 <defaultPull>0</defaultPull>
 </value>
 <value>
@@ -8152,7 +8156,7 @@ end]]></value>
 <key><![CDATA[text]]></key>
 <locked>0</locked>
 <lockedDefaultCurrent>1</lockedDefaultCurrent>
-<default><![CDATA[10]]></default>
+<default><![CDATA[78]]></default>
 <defaultPull>0</defaultPull>
 </value>
 <value>
@@ -8649,7 +8653,7 @@ end]]></value>
 <key><![CDATA[text]]></key>
 <locked>0</locked>
 <lockedDefaultCurrent>1</lockedDefaultCurrent>
-<default><![CDATA[16]]></default>
+<default><![CDATA[48]]></default>
 <defaultPull>0</defaultPull>
 </value>
 <value>
@@ -8883,7 +8887,7 @@ end]]></value>
   
   self:findByName("character.button.fuzz", true).values['x'] = bVal
   
-  -- button 4.  Howl
+  -- button 4. Howl
   if (active ~= 4) then
     bVal = 0
   else
@@ -9095,7 +9099,7 @@ end]]></value>
   root:findByName("characterButtons"):notify("switchSelect", 0)
 end
 
-function onValueChanged(val) 
+function onValueChanged(val)
   if (val == "touch" and self.values.x == 1) then
     -- prevent turning button off
     self.values['x'] = 1
