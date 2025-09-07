@@ -271,10 +271,8 @@ end]]></value>
 <value><![CDATA[function onValueChanged(name)
   if (name == "x") then  
     if (self.values[name] == 1) then
-      print ("turning on")
       sendMIDI({ MIDIMessageType.CONTROLCHANGE, 91, 127 }) 
     else
-      print ("turning off")
       sendMIDI({ MIDIMessageType.CONTROLCHANGE, 91, 0 }) 
     end
   end
@@ -874,7 +872,7 @@ end]]></value>
 <key><![CDATA[text]]></key>
 <locked>0</locked>
 <lockedDefaultCurrent>1</lockedDefaultCurrent>
-<default><![CDATA[58]]></default>
+<default><![CDATA[93]]></default>
 <defaultPull>0</defaultPull>
 </value>
 <value>
@@ -1371,7 +1369,7 @@ end]]></value>
 <key><![CDATA[text]]></key>
 <locked>0</locked>
 <lockedDefaultCurrent>1</lockedDefaultCurrent>
-<default><![CDATA[6]]></default>
+<default><![CDATA[64]]></default>
 <defaultPull>0</defaultPull>
 </value>
 <value>
@@ -1868,7 +1866,7 @@ end]]></value>
 <key><![CDATA[text]]></key>
 <locked>0</locked>
 <lockedDefaultCurrent>1</lockedDefaultCurrent>
-<default><![CDATA[45]]></default>
+<default><![CDATA[8]]></default>
 <defaultPull>0</defaultPull>
 </value>
 <value>
@@ -2365,7 +2363,7 @@ end]]></value>
 <key><![CDATA[text]]></key>
 <locked>0</locked>
 <lockedDefaultCurrent>1</lockedDefaultCurrent>
-<default><![CDATA[60]]></default>
+<default><![CDATA[41]]></default>
 <defaultPull>0</defaultPull>
 </value>
 <value>
@@ -2943,7 +2941,7 @@ end]]></value>
 <key><![CDATA[text]]></key>
 <locked>0</locked>
 <lockedDefaultCurrent>1</lockedDefaultCurrent>
-<default><![CDATA[93]]></default>
+<default><![CDATA[78]]></default>
 <defaultPull>0</defaultPull>
 </value>
 <value>
@@ -3440,7 +3438,7 @@ end]]></value>
 <key><![CDATA[text]]></key>
 <locked>0</locked>
 <lockedDefaultCurrent>1</lockedDefaultCurrent>
-<default><![CDATA[47]]></default>
+<default><![CDATA[57]]></default>
 <defaultPull>0</defaultPull>
 </value>
 <value>
@@ -3937,7 +3935,7 @@ end]]></value>
 <key><![CDATA[text]]></key>
 <locked>0</locked>
 <lockedDefaultCurrent>1</lockedDefaultCurrent>
-<default><![CDATA[114]]></default>
+<default><![CDATA[71]]></default>
 <defaultPull>0</defaultPull>
 </value>
 <value>
@@ -4434,7 +4432,7 @@ end]]></value>
 <key><![CDATA[text]]></key>
 <locked>0</locked>
 <lockedDefaultCurrent>1</lockedDefaultCurrent>
-<default><![CDATA[65]]></default>
+<default><![CDATA[83]]></default>
 <defaultPull>0</defaultPull>
 </value>
 <value>
@@ -5012,7 +5010,7 @@ end]]></value>
 <key><![CDATA[text]]></key>
 <locked>0</locked>
 <lockedDefaultCurrent>1</lockedDefaultCurrent>
-<default><![CDATA[121]]></default>
+<default><![CDATA[102]]></default>
 <defaultPull>0</defaultPull>
 </value>
 <value>
@@ -5509,7 +5507,7 @@ end]]></value>
 <key><![CDATA[text]]></key>
 <locked>0</locked>
 <lockedDefaultCurrent>1</lockedDefaultCurrent>
-<default><![CDATA[68]]></default>
+<default><![CDATA[43]]></default>
 <defaultPull>0</defaultPull>
 </value>
 <value>
@@ -6006,7 +6004,7 @@ end]]></value>
 <key><![CDATA[text]]></key>
 <locked>0</locked>
 <lockedDefaultCurrent>1</lockedDefaultCurrent>
-<default><![CDATA[49]]></default>
+<default><![CDATA[45]]></default>
 <defaultPull>0</defaultPull>
 </value>
 <value>
@@ -6503,7 +6501,7 @@ end]]></value>
 <key><![CDATA[text]]></key>
 <locked>0</locked>
 <lockedDefaultCurrent>1</lockedDefaultCurrent>
-<default><![CDATA[89]]></default>
+<default><![CDATA[39]]></default>
 <defaultPull>0</defaultPull>
 </value>
 <value>
@@ -8156,7 +8154,7 @@ end]]></value>
 <key><![CDATA[text]]></key>
 <locked>0</locked>
 <lockedDefaultCurrent>1</lockedDefaultCurrent>
-<default><![CDATA[78]]></default>
+<default><![CDATA[54]]></default>
 <defaultPull>0</defaultPull>
 </value>
 <value>
@@ -8653,7 +8651,7 @@ end]]></value>
 <key><![CDATA[text]]></key>
 <locked>0</locked>
 <lockedDefaultCurrent>1</lockedDefaultCurrent>
-<default><![CDATA[48]]></default>
+<default><![CDATA[87]]></default>
 <defaultPull>0</defaultPull>
 </value>
 <value>
