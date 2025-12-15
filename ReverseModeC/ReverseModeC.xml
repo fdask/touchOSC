@@ -60,6 +60,72 @@
 <key><![CDATA[pointerPriority]]></key>
 <value>0</value>
 </property>
+<property type='s'>
+<key><![CDATA[script]]></key>
+<value><![CDATA[function init() 
+  pager = root:findByName("pager", true)
+  
+  -- controls pane
+  controls = pager:findByName("controls", true)
+  
+  -- set the buttons to off
+  pb = controls:findByName("powerButton", true)
+  pb:findByName("powerButton.button", true).values['x'] = 0
+  
+  fb = controls:findByName("freezeButton", true)
+  fb:findByName("freezeButton.button", true).values['x'] = 0
+  
+  hs = controls:findByName("halfSpeedButton", true)
+  hs:findByName("halfSpeedButton.button", true).values['x'] = 0
+  
+  -- set the switches to their middle positions
+  mst = controls:findByName("modSyncToggle", true)
+  mst:findByName("modSyncToggle.radio", true).values['x'] = 1
+  
+  mtt = controls:findByName("modTypeToggle", true)
+  mtt:findByName("modTypeToggle.radio", true).values['x'] = 1
+  
+  smt = controls:findByName("sequenceModeToggle", true)
+  smt:findByName("sequenceModeToggle.radio", true).values['x'] = 1
+  
+  -- set the knobs at 50.
+  time = controls:findByName("time", true)
+  time:findByName("time.radial", true).values['x'] = 0.5
+  time:findByName("time.valueLabel", true).values['text'] = 63
+  
+  mix = controls:findByName("mix", true)
+  mix:findByName("mix.radial", true).values['x'] = 0.5
+  mix:findByName("mix.valueLabel", true).values['text'] = 63
+  
+  feedback = controls:findByName("feedback", true)
+  feedback:findByName("feedback.radial", true).values['x'] = 0.5
+  feedback:findByName("feedback.valueLabel", true).values['text'] = 63
+  
+  offset = controls:findByName("offset", true)
+  offset:findByName("offset.radial", true).values['x'] = 0.5
+  offset:findByName("offset.valueLabel", true).values['text'] = 63
+  
+  balance = controls:findByName("balance", true)
+  balance:findByName("balance.radial", true).values['x'] = 0.5
+  balance:findByName("balance.valueLabel", true).values['text'] = 63
+  
+  filter = controls:findByName("filter", true)
+  filter:findByName("filter.radial", true).values['x'] = 0.5
+  filter:findByName("filter.valueLabel", true).values['text'] = 63
+  
+  rampSpeed = controls:findByName("rampSpeed", true)
+  rampSpeed:findByName("rampSpeed.radial", true).values['x'] = 0.5
+  rampSpeed:findByName("rampSpeed.valueLabel", true).values['text'] = 63
+  
+  modRate = controls:findByName("modRate", true)
+  modRate:findByName("modRate.radial", true).values['x'] = 0.5
+  modRate:findByName("modRate.valueLabel", true).values['text'] = 63
+  
+  modDepth = controls:findByName("modDepth", true)
+  modDepth:findByName("modDepth.radial", true).values['x'] = 0.5
+  modDepth:findByName("modDepth.valueLabel", true).values['text'] = 63
+end]]></value>
+</property>
 <property type='i'>
 <key><![CDATA[shape]]></key>
 <value>1</value>
@@ -772,7 +838,7 @@ end]]></value>
 <property type='s'>
 <key><![CDATA[script]]></key>
 <value><![CDATA[function onValueChanged(name)
-  if (name == "x") then
+  if (name == "x" and self.values.x == 1) then
     sendMIDI({ MIDIMessageType.CONTROLCHANGE + 1, 93, 55 })
   end
 end]]></value>
@@ -1292,7 +1358,7 @@ end]]></value>
 <key><![CDATA[text]]></key>
 <locked>0</locked>
 <lockedDefaultCurrent>1</lockedDefaultCurrent>
-<default><![CDATA[0]]></default>
+<default><![CDATA[63]]></default>
 <defaultPull>0</defaultPull>
 </value>
 <value>
@@ -1789,7 +1855,7 @@ end]]></value>
 <key><![CDATA[text]]></key>
 <locked>0</locked>
 <lockedDefaultCurrent>1</lockedDefaultCurrent>
-<default><![CDATA[0]]></default>
+<default><![CDATA[63]]></default>
 <defaultPull>0</defaultPull>
 </value>
 <value>
@@ -2286,7 +2352,7 @@ end]]></value>
 <key><![CDATA[text]]></key>
 <locked>0</locked>
 <lockedDefaultCurrent>1</lockedDefaultCurrent>
-<default><![CDATA[82]]></default>
+<default><![CDATA[63]]></default>
 <defaultPull>0</defaultPull>
 </value>
 <value>
@@ -2783,7 +2849,7 @@ end]]></value>
 <key><![CDATA[text]]></key>
 <locked>0</locked>
 <lockedDefaultCurrent>1</lockedDefaultCurrent>
-<default><![CDATA[82]]></default>
+<default><![CDATA[63]]></default>
 <defaultPull>0</defaultPull>
 </value>
 <value>
@@ -3280,7 +3346,7 @@ end]]></value>
 <key><![CDATA[text]]></key>
 <locked>0</locked>
 <lockedDefaultCurrent>1</lockedDefaultCurrent>
-<default><![CDATA[82]]></default>
+<default><![CDATA[63]]></default>
 <defaultPull>0</defaultPull>
 </value>
 <value>
@@ -3777,7 +3843,7 @@ end]]></value>
 <key><![CDATA[text]]></key>
 <locked>0</locked>
 <lockedDefaultCurrent>1</lockedDefaultCurrent>
-<default><![CDATA[82]]></default>
+<default><![CDATA[63]]></default>
 <defaultPull>0</defaultPull>
 </value>
 <value>
@@ -6332,7 +6398,7 @@ end]]></value>
 <key><![CDATA[text]]></key>
 <locked>0</locked>
 <lockedDefaultCurrent>1</lockedDefaultCurrent>
-<default><![CDATA[0]]></default>
+<default><![CDATA[63]]></default>
 <defaultPull>0</defaultPull>
 </value>
 <value>
@@ -6829,7 +6895,7 @@ end]]></value>
 <key><![CDATA[text]]></key>
 <locked>0</locked>
 <lockedDefaultCurrent>1</lockedDefaultCurrent>
-<default><![CDATA[41]]></default>
+<default><![CDATA[63]]></default>
 <defaultPull>0</defaultPull>
 </value>
 <value>
@@ -7326,7 +7392,7 @@ end]]></value>
 <key><![CDATA[text]]></key>
 <locked>0</locked>
 <lockedDefaultCurrent>1</lockedDefaultCurrent>
-<default><![CDATA[82]]></default>
+<default><![CDATA[63]]></default>
 <defaultPull>0</defaultPull>
 </value>
 <value>
@@ -7612,7 +7678,7 @@ end]]></value>
 </property>
 <property type='s'>
 <key><![CDATA[script]]></key>
-<value><![CDATA[function onValueChanged(name) 
+<value><![CDATA[function onValueChanged(name)
   if (name == "x") then
     sendMIDI({ MIDIMessageType.CONTROLCHANGE + 1, 105, self.values[name] })
   end
